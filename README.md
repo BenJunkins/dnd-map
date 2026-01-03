@@ -1,16 +1,94 @@
-# React + Vite
+# Faerun Monster Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=flat-square)
+![Build](https://img.shields.io/badge/Build-Passing-success?style=flat-square)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
-Currently, two official plugins are available:
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**A Serverless React Application mapping D&D 5e data onto the world of Faerun.**
 
-## React Compiler
+> **Status: Functional Prototype / Active Development**
+>
+> This application is currently live and functional, but features are being actively refined.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### [**Live Demo** (Click Here to View)](https://main.d66jhbb90risp.amplifyapp.com/)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Overview
+
+**Faerun Atlas** is an interactive data visualization tool that bridges the gap between raw D&D 5e API data and the geographical lore of the Forgotten Realms.
+
+Users can explore a map of Faerun, hover over distinct regions (like the Sword Coast or Chult), and instantly see which monsters inhabit those areas based on their Challenge Rating (CR) and type.
+
+### Key Features
+
+- **Interactive Map:** Custom Leaflet.js implementation using a non-geographical (fantasy) coordinate system.
+- **Region Detection:** Ray-casting algorithms determine which fantasy nation the cursor is hovering over.
+- **Live Data:** Fetches monster statistics (HP, CR, Type) from a DynamoDB database.
+- **Smart Filtering:** Filter monsters globally by Challenge Rating (Low, Mid, High).
+
+---
+
+## Architecture & Tech Stack
+
+This project uses a fully **Serverless Architecture** on AWS to ensure scalability and zero idle costs.
+
+| Component         | Technology                 | Role                                 |
+| :---------------- | :------------------------- | :----------------------------------- |
+| **Frontend**      | React (Vite)               | Interactive UI & State Management    |
+| **Mapping**       | Leaflet.js + React-Leaflet | Image Overlay & Polygon Rendering    |
+| **Hosting**       | AWS Amplify                | CI/CD & Static Site Hosting          |
+| **API**           | AWS API Gateway            | RESTful Endpoint management          |
+| **Backend Logic** | AWS Lambda (Python)        | Data fetching & database interfacing |
+| **Database**      | Amazon DynamoDB            | NoSQL storage for monster stats      |
+
+### Data Flow
+
+1.  **Ingestion:** A Python Lambda script queries the [DnD 5e GraphQL API](https://www.dnd5eapi.co/) and writes optimized records to **DynamoDB**.
+2.  **Request:** The React frontend requests data via **API Gateway**.
+3.  **Response:** A second Lambda function scans the database and returns JSON to the client.
+4.  **Visualization:** React maps the data points to custom polygons drawn over the Faerun image.
+
+---
+
+## How to Run Locally
+
+If you want to poke around the code, you can run it on your machine:
+
+1.  **Clone the repo**
+
+    ```bash
+    git clone [https://github.com/Ben_Junkins/dnd-map.git](https://github.com/Ben_Junkins/dnd-map.git)
+    cd dnd-map
+    ```
+
+2.  **Install dependencies**
+
+    ```bash
+    npm install
+    ```
+
+3.  **Start the server**
+    ```bash
+    npm run dev
+    ```
+
+---
+
+## Roadmap (Upcoming Features)
+
+- [ ] **Accurate Spawning:** Move from random regional assignment to lore-accurate monster locations.
+- [ ] **Detail View:** Click a monster to view full stats (AC, Speed, Attacks) in a modal.
+- [ ] **Dungeon Master Mode:** Allow users to drag-and-drop monsters to build custom encounters.
+
+---
+
+## Contact
+
+Built by **Benjamin Junkins** as a Cloud & Frontend Portfolio Project.
+
+- [LinkedIn](https://linkedin.com/in/benjamin-junkins/)
