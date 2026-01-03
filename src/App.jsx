@@ -63,17 +63,8 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // MOCK DATA (Use this until your API is ready)
-        // Once API is ready, uncomment the fetch lines below:
-        // const res = await fetch(API_URL);
-        // const rawData = await res.json();
-
-        const rawData = [
-          { id: "goblin", name: "Goblin", type: "humanoid", cr: 0.25, hp: 7 },
-          { id: "dragon", name: "Red Dragon", type: "dragon", cr: 17, hp: 256 },
-          { id: "lich", name: "Lich", type: "undead", cr: 21, hp: 135 },
-          { id: "wolf", name: "Dire Wolf", type: "beast", cr: 1, hp: 37 },
-        ];
+        const res = await fetch(API_URL);
+        const rawData = await res.json();
 
         // Randomly assign regions for demo purposes
         const regionNames = regionData.map((r) => r.properties.name);
