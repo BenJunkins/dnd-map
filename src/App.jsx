@@ -27,7 +27,7 @@ L.Icon.Default.mergeOptions({
 const IMAGE_URL = "/faerun_map.jpg";
 const IMAGE_BOUNDS = [
   [0, 0],
-  [4096, 3072],
+  [1500, 2000],
 ]; // Aspect ratio
 const API_URL =
   "https://eipiir7l70.execute-api.us-east-1.amazonaws.com/monsters";
