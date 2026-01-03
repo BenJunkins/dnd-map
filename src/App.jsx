@@ -29,7 +29,8 @@ const IMAGE_BOUNDS = [
   [0, 0],
   [4096, 3072],
 ]; // Aspect ratio
-const API_URL = "YOUR_API_GATEWAY_URL/monsters"; // Replace later
+const API_URL =
+  "https://eipiir7l70.execute-api.us-east-1.amazonaws.com/monsters";
 const DEV_MODE = true; // SET TO FALSE when done tracing regions!
 
 // --- HELPER COMPONENT: COORDINATE LOGGER ---
