@@ -27,8 +27,8 @@ L.Icon.Default.mergeOptions({
 const IMAGE_URL = "/faerun_map.jpg";
 const IMAGE_BOUNDS = [
   [0, 0],
-  [1500, 2000],
-]; // [Y, X] - Adjust to match your image aspect ratio
+  [4096, 3072],
+]; // Aspect ratio
 const API_URL = "YOUR_API_GATEWAY_URL/monsters"; // Replace later
 const DEV_MODE = true; // SET TO FALSE when done tracing regions!
 
