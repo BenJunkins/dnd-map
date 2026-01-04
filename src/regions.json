@@ -1,7 +1,23 @@
 [
   {
     "type": "Feature",
-    "properties": { "name": "Sword Coast" },
+    "properties": {
+      "region_id": "sword_coast",
+      "name": "The Sword Coast",
+      "climate": ["Temperate", "Rainy", "Misty", "Subarctic (North)"],
+      "terrain": ["Coastal", "Urban", "Forest", "Hills"],
+      "vibes": ["Adventure", "Civilization vs Wilderness", "Trade", "Heroic"],
+      "dominant_monsters": [
+        "Bandits",
+        "Goblins",
+        "Orcs",
+        "Trolls",
+        "Green Dragons"
+      ],
+      "major_factions": ["Lords' Alliance", "Zhentarim", "Harpers"],
+      "danger_level": "Medium",
+      "keywords": ["Waterdeep", "Baldur's Gate", "Roads", "Caravans", "Ruins"]
+    },
     "geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -23,7 +39,33 @@
   },
   {
     "type": "Feature",
-    "properties": { "name": "Chult" },
+    "properties": {
+      "region_id": "chult",
+      "name": "Chult",
+      "climate": ["Tropical", "Hot", "Humid", "Monsoon"],
+      "terrain": ["Jungle", "Swamp", "Volcanic", "Coastal"],
+      "vibes": ["Primal", "Disease", "Savage", "Ancient", "Lost World"],
+      "dominant_monsters": [
+        "Dinosaurs",
+        "Yuan-ti",
+        "Undead",
+        "Giant Apes",
+        "Zombies"
+      ],
+      "major_factions": [
+        "Flaming Fist",
+        "Order of the Gauntlet",
+        "Red Wizards"
+      ],
+      "danger_level": "Extreme",
+      "keywords": [
+        "Port Nyanzaru",
+        "Ubtao",
+        "Soulmonger",
+        "Expedition",
+        "Fever"
+      ]
+    },
     "geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -65,7 +107,17 @@
   },
   {
     "type": "Feature",
-    "properties": { "name": "Moonshae Isles" },
+    "properties": {
+      "region_id": "moonshae_isles",
+      "name": "Moonshae Isles",
+      "climate": ["Rainy", "Misty", "Temperate"],
+      "terrain": ["Islands", "Forests", "Mountains", "Bogs"],
+      "vibes": ["Celtic", "Fey", "Primal", "Mystical"],
+      "dominant_monsters": ["Fey", "Giants", "Werewolves", "Displacer Beasts"],
+      "major_factions": ["High King", "Ffolk", "Northlanders", "Druids"],
+      "danger_level": "High",
+      "keywords": ["Earthmother", "Feywild", "Vikings", "Druids", "Sacred"]
+    },
     "geometry": {
       "type": "Polygon",
       "coordinates": [
@@ -83,5 +135,885 @@
         ]
       ]
     }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "icewind_dale",
+      "name": "Icewind Dale",
+      "climate": ["Arctic", "Frigid", "Blizzards", "Eternal Night"],
+      "terrain": ["Tundra", "Glacier", "Mountains", "Frozen Lakes"],
+      "vibes": ["Isolation", "Survival", "Desolation", "Darkness"],
+      "dominant_monsters": [
+        "Yetis",
+        "Remorhaz",
+        "Frost Giants",
+        "White Dragons",
+        "Coldlight Walkers"
+      ],
+      "major_factions": [
+        "Ten-Towns",
+        "Arcane Brotherhood",
+        "Reghed Barbarians"
+      ],
+      "danger_level": "High",
+      "keywords": [
+        "Ten-Towns",
+        "Kelvin's Cairn",
+        "Auril",
+        "Fishing",
+        "Avalanche"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "northwest_faerun",
+      "name": "Northwest Faerûn",
+      "climate": ["Temperate", "Cold", "Misty"],
+      "terrain": ["Forest", "Hills", "Mountains", "River Valleys"],
+      "vibes": ["Wilderness", "Ancient", "Exploration", "Ruins"],
+      "dominant_monsters": [
+        "Orcs",
+        "Trolls",
+        "Blue Dragons",
+        "Hill Giants",
+        "Treants"
+      ],
+      "major_factions": [
+        "Uthgardt Barbarians",
+        "Emerald Enclave",
+        "Lords' Alliance"
+      ],
+      "danger_level": "Medium",
+      "keywords": [
+        "High Forest",
+        "Dessarin Valley",
+        "Savage Frontier",
+        "Tribes",
+        "Elves"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "luruar",
+      "name": "Luruar (Silver Marches)",
+      "climate": ["Cold", "Temperate", "Snowy Winters"],
+      "terrain": ["Mountains", "Forest", "Fortified Cities"],
+      "vibes": ["Civilized", "Defensive", "Dwarven Heritage", "Alliance"],
+      "dominant_monsters": ["Drow", "Dragons", "Orcs", "Duergar"],
+      "major_factions": [
+        "Knights in Silver",
+        "Dwarves of Citadel Adbar",
+        "Harpers"
+      ],
+      "danger_level": "High",
+      "keywords": [
+        "Silverymoon",
+        "Mithral Hall",
+        "Sundabar",
+        "League",
+        "Defense"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "anauroch",
+      "name": "Anauroch",
+      "climate": ["Arid", "Scorching Day", "Freezing Night", "Magical Storms"],
+      "terrain": ["Sand Dunes", "Rocky Wastes", "Salt Flats", "Ruins"],
+      "vibes": ["Desolation", "Magic", "Ancient", "Mysterious"],
+      "dominant_monsters": [
+        "Blue Dragons",
+        "Purple Worms",
+        "Mummies",
+        "Phaerimm",
+        "Lamias"
+      ],
+      "major_factions": ["Bedine Nomads", "Shade Enclave", "Zhentarim"],
+      "danger_level": "High",
+      "keywords": ["Netheril", "Empire of Shadows", "Oasis", "Thirst", "Buried"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "the_ride",
+      "name": "The Ride",
+      "climate": ["Temperate", "Windy", "Steppe"],
+      "terrain": ["Plains", "Grasslands", "Open Steppe"],
+      "vibes": ["Nomadic", "Open", "Barbarian", "Horse Culture"],
+      "dominant_monsters": ["Bulettes", "Ankhegs", "Gnolls", "Orcs"],
+      "major_factions": ["Barbarian Tribes", "Zhentarim"],
+      "danger_level": "Medium",
+      "keywords": ["Horses", "Tribes", "Zhentil Keep", "Wasteland", "Raids"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "thar",
+      "name": "Thar",
+      "climate": ["Cold", "Arid", "Harsh"],
+      "terrain": ["Rocky Wastes", "Broken Lands", "Plateau"],
+      "vibes": ["Savage", "Monster-Rules", "War-Torn"],
+      "dominant_monsters": ["Ogres", "Orcs", "Leucrottas", "Manticores"],
+      "major_factions": ["Ogre Kingdoms", "Orc Tribes"],
+      "danger_level": "High",
+      "keywords": [
+        "The Great Gray Land",
+        "Ogre",
+        "Tribes",
+        "Desolate",
+        "Raiders"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "vaasa",
+      "name": "Vaasa",
+      "climate": ["Cold", "Frozen", "Tundra"],
+      "terrain": ["Bog", "Tundra", "Mountains", "Wasteland"],
+      "vibes": ["Evil", "Haunted", "Witchcraft", "Desolate"],
+      "dominant_monsters": ["Undead", "Liches", "Constructs", "Ice Giants"],
+      "major_factions": ["Warlock Knights", "Cult of Orcus"],
+      "danger_level": "Deadly",
+      "keywords": [
+        "Zhengyi",
+        "Witch-King",
+        "Castle Perilous",
+        "Damara War",
+        "Bodaks"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "damara",
+      "name": "Damara",
+      "climate": ["Cold", "Temperate"],
+      "terrain": ["Mountains", "Hills", "Mining Towns"],
+      "vibes": ["Hardy", "Dutiful", "Rebuilding", "Mineral Rich"],
+      "dominant_monsters": ["Goblins", "Duergar", "Dragons", "Wolves"],
+      "major_factions": [
+        "King of Damara",
+        "Church of Ilmater",
+        "Order of the Golden Cup"
+      ],
+      "danger_level": "Medium",
+      "keywords": [
+        "Bloodstone Pass",
+        "Iron",
+        "Silver",
+        "Heliogabalus",
+        "Paladins"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "narfell",
+      "name": "Narfell",
+      "climate": ["Cold", "Dry"],
+      "terrain": ["Plains", "Steppe", "Ancient Ruins"],
+      "vibes": ["Demon-Binding", "Nomadic", "Fallen Empire"],
+      "dominant_monsters": ["Demons", "Fiends", "Winter Wolves", "Remorhaz"],
+      "major_factions": ["Narf Horsemen", "Demonbinders"],
+      "danger_level": "High",
+      "keywords": [
+        "Demon Stone",
+        "Horses",
+        "Summoning",
+        "Cold Plains",
+        "Barbarians"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "rashemen",
+      "name": "Rashemen",
+      "climate": ["Cold", "Snowy Winters", "Short Summers"],
+      "terrain": ["Hills", "Forest", "Lakes"],
+      "vibes": ["Mystical", "Spirits", "Matriarchal", "Fierce"],
+      "dominant_monsters": ["Hags", "Spirits", "Elementals", "Werebears"],
+      "major_factions": ["Wychlaran (Witches)", "Berserkers"],
+      "danger_level": "Medium",
+      "keywords": [
+        "Witches",
+        "Berserkers",
+        "Spirits",
+        "Immortal Place",
+        "Masks"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "hordelands",
+      "name": "The Hordelands (Endless Waste)",
+      "climate": ["Arid", "Windy", "Cold Winters"],
+      "terrain": ["Steppe", "Plains", "Endless Grass"],
+      "vibes": ["Vast", "Nomadic", "Empty", "Horse Lords"],
+      "dominant_monsters": ["Griffons", "Wyverns", "Ankhegs", "Gnolls"],
+      "major_factions": ["Tuigan Horde", "Yamun Khahan"],
+      "danger_level": "Medium",
+      "keywords": ["Golden Way", "Tuigan", "Silk Road", "Nomads", "Yurts"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "ashanath",
+      "name": "Ashanath",
+      "climate": ["Temperate", "Windy"],
+      "terrain": ["Plains", "Farmland", "River Valleys"],
+      "vibes": ["Rural", "Unsettled", "Frontier"],
+      "dominant_monsters": ["Bulettes", "Goblins", "Ankhegs"],
+      "major_factions": ["Independent Towns", "Rashemen Influencers"],
+      "danger_level": "Low",
+      "keywords": ["Lake Ashane", "Trade", "Farming", "Skirmishes"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "thesk",
+      "name": "Thesk",
+      "climate": ["Temperate", "Mild"],
+      "terrain": ["Plains", "Coastal", "Trade Roads"],
+      "vibes": ["Mercantile", "Diverse", "Orc-Friendly", "Gateway"],
+      "dominant_monsters": ["Bandits", "Shadow Creatures", "Orcs (Citizens)"],
+      "major_factions": ["Shadowmasters", "Merchant Council", "Iron Orcs"],
+      "danger_level": "Medium",
+      "keywords": [
+        "Golden Way",
+        "Telflamm",
+        "Merchants",
+        "Orcs",
+        "Kara-Tur Trade"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "great_dale",
+      "name": "The Great Dale",
+      "climate": ["Temperate", "Forest"],
+      "terrain": ["Dense Forest", "Hills", "Ruins"],
+      "vibes": ["Druidic", "Secretive", "Ancient Magic", "Wild"],
+      "dominant_monsters": ["Treants", "Blights", "Fey", "Demons"],
+      "major_factions": ["Circle of Leth", "Nentyarch", "Demonfey"],
+      "danger_level": "High",
+      "keywords": ["Dunwood", "Narfell Ruins", "Druids", "Forest", "Isolation"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "impiltur",
+      "name": "Impiltur",
+      "climate": ["Cold", "Temperate", "Windy"],
+      "terrain": ["Mountains", "Coastal", "Hills"],
+      "vibes": ["Declining", "Religious", "Demon-Hunting", "Feudal"],
+      "dominant_monsters": ["Demons", "Undead", "Cultists", "Gargoyles"],
+      "major_factions": ["Church of Ilmater", "Demon Hunters"],
+      "danger_level": "Medium",
+      "keywords": ["Paladins", "Demons", "Trade", "Fallen Glory", "Holy"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "the_vast",
+      "name": "The Vast",
+      "climate": ["Temperate", "Coastal"],
+      "terrain": ["Mountains", "Hills", "Grasslands"],
+      "vibes": ["Frontier", "Orc-War", "Opportunity"],
+      "dominant_monsters": ["Orcs", "Goblins", "Wyverns", "Trolls"],
+      "major_factions": ["Calaunt", "Tantras", "Ravens Bluff"],
+      "danger_level": "Medium",
+      "keywords": ["Ravens Bluff", "Orc Raids", "Adventure", "Passes", "Trade"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "sembia",
+      "name": "Sembia",
+      "climate": ["Temperate", "Mild"],
+      "terrain": ["Plains", "Farmland", "Coastal", "Urban"],
+      "vibes": ["Wealthy", "Political", "Corrupt", "Merchant Princes"],
+      "dominant_monsters": ["Doppelgangers", "Assassins", "Shadows"],
+      "major_factions": [
+        "Merchant Guilds",
+        "Netheril (Historical)",
+        "Shadovar"
+      ],
+      "danger_level": "Low",
+      "keywords": ["Money", "Trade", "Ordulin", "Politics", "Mercenaries"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "dalelands",
+      "name": "The Dalelands",
+      "climate": ["Temperate", "Forested"],
+      "terrain": ["Forest", "Valley", "Farmland"],
+      "vibes": ["Rustic", "Heroic", "Secretive", "Elven-History"],
+      "dominant_monsters": ["Drow", "Spiders", "Owlbears", "Zhentarim"],
+      "major_factions": [
+        "Dales Council",
+        "Elves of Cormanthor",
+        "Harpers",
+        "Zhentarim"
+      ],
+      "danger_level": "Medium",
+      "keywords": [
+        "Shadowdale",
+        "Elminster",
+        "Myth Drannor",
+        "Standing Stone",
+        "Freedom"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "cormyr",
+      "name": "Cormyr",
+      "climate": ["Temperate", "Rainy"],
+      "terrain": ["Forest", "Mountains", "Hills", "Farmland"],
+      "vibes": ["Chivalry", "Lawful", "Kingdom", "Knights"],
+      "dominant_monsters": ["Goblins", "Dragons", "Bandits", "Orcs"],
+      "major_factions": ["Purple Dragons", "War Wizards", "Crown"],
+      "danger_level": "Medium",
+      "keywords": [
+        "Suzail",
+        "Forest Kingdom",
+        "Knights",
+        "Law",
+        "Purple Dragon"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "dragon_coast",
+      "name": "Dragon Coast",
+      "climate": ["Temperate", "Humid"],
+      "terrain": ["Coastal", "Cliffs", "Forest"],
+      "vibes": ["Lawless", "Piracy", "Smuggling", "Trade"],
+      "dominant_monsters": [
+        "Pirates",
+        "Dragon Turtles",
+        "Lizardfolk",
+        "Bandits"
+      ],
+      "major_factions": ["Pirate Lords", "Merchant Costers", "Zhentarim"],
+      "danger_level": "Medium",
+      "keywords": [
+        "Westgate",
+        "Smugglers",
+        "Sea of Fallen Stars",
+        "Illusion",
+        "Night Masks"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "nelanther_isles",
+      "name": "Nelanther Isles",
+      "climate": ["Windy", "Temperate", "Stormy"],
+      "terrain": ["Islands", "Rocky", "Coves"],
+      "vibes": ["Piracy", "Lawless", "Raiding"],
+      "dominant_monsters": ["Pirates", "Ogres", "Harpies", "Sea Monsters"],
+      "major_factions": ["Pirate Captains", "Sea Towers"],
+      "danger_level": "High",
+      "keywords": ["Pirates", "Smugglers", "Shipwrecks", "Loot", "Navy"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "amn",
+      "name": "Amn",
+      "climate": ["Temperate", "Warm"],
+      "terrain": ["Plains", "Lakes", "Urban"],
+      "vibes": ["Mercantile", "Wealth", "Corrupt", "Oligarchy"],
+      "dominant_monsters": ["Doppelgangers", "Goblins (Sythillis)", "Ogres"],
+      "major_factions": ["Council of Six", "Shadow Thieves", "Cowled Wizards"],
+      "danger_level": "Low",
+      "keywords": ["Athkatla", "Gold", "Trade", "Magic Ban", "Merchants"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "tethyr",
+      "name": "Tethyr",
+      "climate": ["Temperate", "Warm", "Forest"],
+      "terrain": ["Forest", "Hills", "Farmland"],
+      "vibes": ["Noble", "Feudal", "Reclaimed", "Forest-Border"],
+      "dominant_monsters": ["Elves (Wild)", "Spiders", "Dragons", "Giants"],
+      "major_factions": ["Crown of Tethyr", "Elves of Wealdath"],
+      "danger_level": "Medium",
+      "keywords": ["Knights", "Wealdath", "Forest", "Civil War", "Nobility"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "sespech",
+      "name": "Sespech",
+      "climate": ["Temperate", "Warm"],
+      "terrain": ["Plains", "Farmland", "Coastal"],
+      "vibes": ["Independent", "Martial", "Orderly"],
+      "dominant_monsters": ["Goblins", "Undead", "Naga"],
+      "major_factions": ["Baron of Sespech", "Chondath Rivals"],
+      "danger_level": "Low",
+      "keywords": ["Independence", "Nagaworld", "Golden Road", "Farming"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "chondath",
+      "name": "Chondath",
+      "climate": ["Warm", "Humid"],
+      "terrain": ["Coastal", "Forest", "Plains"],
+      "vibes": ["Decadent", "Fading Empire", "Mercantile", "Intrigue"],
+      "dominant_monsters": ["Spies", "Lycanthropes", "Elves"],
+      "major_factions": ["Merchant Houses", "Emerald Enclave"],
+      "danger_level": "Medium",
+      "keywords": ["Arrabar", "Trade", "Elf-Hating", "Fading Glory", "Commerce"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "turmish",
+      "name": "Turmish",
+      "climate": ["Temperate", "Mild"],
+      "terrain": ["Mountains", "Farmland", "Coastal"],
+      "vibes": ["Democratic", "Peaceful", "Merchant", "Scholarly"],
+      "dominant_monsters": ["Sea Monsters", "Goblins", "Kobolds"],
+      "major_factions": ["Assembly of Stars", "Emerald Enclave"],
+      "danger_level": "Low",
+      "keywords": [
+        "Alaghôn",
+        "Democracy",
+        "Agriculture",
+        "Peace",
+        "Emerald Enclave"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "pirate_isles",
+      "name": "Pirate Isles",
+      "climate": ["Temperate", "Windy"],
+      "terrain": ["Islands", "Rocky", "Hidden Coves"],
+      "vibes": ["Piracy", "Anarchy", "Treasure"],
+      "dominant_monsters": ["Pirates", "Sahuagin", "Sea Serpents", "Ghosts"],
+      "major_factions": ["Pirate Lords", "Immigrants"],
+      "danger_level": "High",
+      "keywords": ["Immortal", "Skull", "Dragonisle", "Hurricanes", "Loot"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "altumbel",
+      "name": "Altumbel",
+      "climate": ["Temperate", "Windy", "Rainy"],
+      "terrain": ["Peninsula", "Coastal", "Rocky"],
+      "vibes": ["Isolationist", "Xenophobic", "Fishing"],
+      "dominant_monsters": ["Pirates", "Undead (Sea)", "Sahuagin"],
+      "major_factions": ["Merchants", "Anti-Wizard Sentiment"],
+      "danger_level": "Low",
+      "keywords": ["Spindrift", "Pirates", "Hermits", "No Magic", "Fishing"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "aglarond",
+      "name": "Aglarond",
+      "climate": ["Temperate", "Coastal", "Forested"],
+      "terrain": ["Forest", "Coastal", "Cliffs"],
+      "vibes": ["Magical", "Defensive", "Elven-Alliance", "Anti-Thay"],
+      "dominant_monsters": ["Fey", "Griffons", "Thayan Undead"],
+      "major_factions": ["Simbul (Historical)", "Council", "Half-Elves"],
+      "danger_level": "Medium",
+      "keywords": ["Yuirwood", "Sorcery", "Half-Elves", "Defense", "Magic"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "threskel",
+      "name": "Threskel",
+      "climate": ["Dry", "Temperate"],
+      "terrain": ["Plains", "Wasteland", "Coastal"],
+      "vibes": ["Lawless", "Vassal State", "Harsh"],
+      "dominant_monsters": ["Dragons", "Bandits", "Undead"],
+      "major_factions": ["Dragon Lords", "Chessenta Rivals"],
+      "danger_level": "Medium",
+      "keywords": ["Mordulkin", "Dragonbones", "Vassal", "Poverty"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "chessenta",
+      "name": "Chessenta",
+      "climate": ["Warm", "Temperate"],
+      "terrain": ["Plains", "Hills", "City-States"],
+      "vibes": ["Martial", "Athletic", "Warring", "Greek-Inspired"],
+      "dominant_monsters": ["Hydras", "Cyclopes", "Manticores"],
+      "major_factions": ["City Rulers", "Tchazzar (Dragon)"],
+      "danger_level": "Medium",
+      "keywords": ["Warriors", "Mercenaries", "Olympic", "Philosophy", "Feud"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "free_unther",
+      "name": "Free Unther (North / Messemprar)",
+      "climate": ["Arid", "Warm"],
+      "terrain": ["Plains", "Coastal", "Ruins"],
+      "vibes": ["Rebellious", "Hardened", "Survival", "War-Torn"],
+      "dominant_monsters": ["Constructs", "Mages", "Undead"],
+      "major_factions": ["Northern Wizards", "Messemprar Rebels", "Cults"],
+      "danger_level": "High",
+      "keywords": ["Messemprar", "Resistance", "Slaves", "Magic", "Defiance"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "occupied_unther",
+      "name": "Occupied Unther (South / Tymanther)",
+      "climate": ["Arid", "Hot"],
+      "terrain": ["Desert", "Plains", "Volcanic Ash"],
+      "vibes": ["Tyrannical", "Occupied", "Dragon-Ruled", "Militaristic"],
+      "dominant_monsters": ["Dragonborn", "Dragons", "Hydras", "Sphinxes"],
+      "major_factions": [
+        "Gilgeam's Legion",
+        "Tymanther Dragonborn",
+        "Mulhorand"
+      ],
+      "danger_level": "High",
+      "keywords": [
+        "Gilgeam",
+        "Unthalass",
+        "Tymanther",
+        "Dragonborn",
+        "God-King"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "mulhorand",
+      "name": "Mulhorand",
+      "climate": ["Hot", "Arid"],
+      "terrain": ["Desert", "River Valley", "Plains"],
+      "vibes": ["Egyptian", "Divine Rule", "Ancient", "Static"],
+      "dominant_monsters": ["Mummies", "Sphinxes", "Jackalweres", "Scorpions"],
+      "major_factions": ["Pharaoh", "Church of Anhur", "Church of Horus-Re"],
+      "danger_level": "Medium",
+      "keywords": ["Pyramids", "Pharaoh", "Slavery", "Gods", "Old Empire"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "murghom",
+      "name": "Murghôm",
+      "climate": ["Temperate", "Arid"],
+      "terrain": ["Plains", "Steppe", "Farming"],
+      "vibes": ["Independent", "Horse Culture", "Dragon-Ruled"],
+      "dominant_monsters": ["Dragons", "Wyverns", "Undead"],
+      "major_factions": ["Dragon Princes", "Ataman"],
+      "danger_level": "Medium",
+      "keywords": ["Dragon Princes", "Horses", "Farming", "Neutrality"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "eastern_shaar",
+      "name": "Eastern Shaar",
+      "climate": ["Hot", "Arid"],
+      "terrain": ["Savanna", "Grasslands", "Plains"],
+      "vibes": ["Nomadic", "Endless", "Wild"],
+      "dominant_monsters": ["Gnolls", "Wemics", "Loxodons", "Bulettes"],
+      "major_factions": ["Nomad Tribes", "Gnoll Packs"],
+      "danger_level": "High",
+      "keywords": ["Savanna", "Tribes", "Wemics", "Trade Route", "Heat"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "great_rift",
+      "name": "The Great Rift",
+      "climate": ["Temperate", "Mountainous"],
+      "terrain": ["Canyon", "Mountains", "Subterranean"],
+      "vibes": ["Dwarven", "Industrial", "Fortified", "Deep"],
+      "dominant_monsters": ["Drow", "Underdark Creatures", "Dragons"],
+      "major_factions": ["Gold Dwarves", "Deep Kingdom"],
+      "danger_level": "High",
+      "keywords": ["Gold Dwarves", "Underhome", "Rift", "Mining", "Wealth"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "luiren",
+      "name": "Luiren",
+      "climate": ["Warm", "Humid"],
+      "terrain": ["Forest", "Hills", "Farmland"],
+      "vibes": ["Halfling", "Peaceful", "Trickster", "Submerged"],
+      "dominant_monsters": ["Forest Creatures", "Shapeshifters", "Spiders"],
+      "major_factions": ["Halfling Sheriffs", "Temples of Yondalla"],
+      "danger_level": "Low",
+      "keywords": ["Halflings", "Small Folk", "Food", "Hills", "Chelimber"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "dambrath",
+      "name": "Dambrath",
+      "climate": ["Hot", "Humid"],
+      "terrain": ["Plains", "Coastal", "Jungle"],
+      "vibes": ["Matriarchal", "Drow-Blood", "Exotic", "Savage"],
+      "dominant_monsters": ["Drow", "Half-Drow", "Spiders", "Lizardfolk"],
+      "major_factions": ["Crinti (Shadow Nobility)", "Loviatar Worship"],
+      "danger_level": "High",
+      "keywords": [
+        "Drow",
+        "Horses",
+        "Sunlight Sensitivity",
+        "Darkness",
+        "Raids"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "halruaa",
+      "name": "Halruaa",
+      "climate": ["Warm", "Humid", "Sheltered"],
+      "terrain": ["Basin", "Mountains", "Magical"],
+      "vibes": ["Magical", "Utopian", "Secretive", "Wizardry"],
+      "dominant_monsters": ["Constructs", "Elementals", "Skyships"],
+      "major_factions": ["Mages Council", "Jordain"],
+      "danger_level": "Medium",
+      "keywords": ["Magic", "Skyships", "Wizards", "Isolation", "Mountains"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "lapaliiya",
+      "name": "Lapaliiya",
+      "climate": ["Tropical", "Hot"],
+      "terrain": ["Jungle", "Coastal", "City-States"],
+      "vibes": ["Exotic", "Trade", "Snake-Cults", "Warrior"],
+      "dominant_monsters": ["Yuan-ti", "Serpents", "Naga"],
+      "major_factions": ["City Leagues", "Serpent Cults"],
+      "danger_level": "High",
+      "keywords": ["Zealots", "Snakes", "Olives", "Trade", "Alliances"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "shaar",
+      "name": "The Shaar",
+      "climate": ["Hot", "Arid"],
+      "terrain": ["Savanna", "Grasslands", "Canyon"],
+      "vibes": ["Wild", "Nomadic", "Predatory", "Endless"],
+      "dominant_monsters": ["Wemics", "Gnolls", "Lions", "Elephants"],
+      "major_factions": ["Nomadic Tribes", "Slavers"],
+      "danger_level": "High",
+      "keywords": ["Grasslands", "Hunters", "Landsharks", "Trade", "Desolation"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "border_kingdoms",
+      "name": "Border Kingdoms",
+      "climate": ["Varied", "Magical", "Chaotic"],
+      "terrain": ["Forest", "Hills", "Coast", "Weird"],
+      "vibes": ["Chaotic", "Unstable", "Opportunity", "Weird"],
+      "dominant_monsters": ["Beholders", "Mimics", "Adventurers", "Demons"],
+      "major_factions": ["Petty Tyrants", "Adventurers", "Zhentarim"],
+      "danger_level": "High",
+      "keywords": ["Chaos", "Tyrants", "Change", "Magic", "Treasure"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "tharsult",
+      "name": "Tharsult",
+      "climate": ["Tropical", "Wet"],
+      "terrain": ["Island", "Coastal", "Underground Tunnels"],
+      "vibes": ["Mercantile", "Wealth", "Warehouse", "Hidden"],
+      "dominant_monsters": ["Lizardfolk (Underground)", "Spiders", "Smugglers"],
+      "major_factions": ["Merchant Families", "Slave Traders"],
+      "danger_level": "Medium",
+      "keywords": [
+        "Trade Hub",
+        "Spices",
+        "Lizardfolk",
+        "Shining Sea",
+        "Warehouse"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "calimshan",
+      "name": "Calimshan",
+      "climate": ["Hot", "Arid", "Desert"],
+      "terrain": ["Desert", "Urban", "Oasis"],
+      "vibes": ["Arabian", "Genie-Ruled", "Wealth", "Magic"],
+      "dominant_monsters": ["Djinn", "Efreet", "Desert Creatures", "Lamias"],
+      "major_factions": ["Genie Lords", "Pasha", "Guilds"],
+      "danger_level": "High",
+      "keywords": ["Calimport", "Genies", "Silk", "Desert", "Slavery"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "tashalar",
+      "name": "Tashalar",
+      "climate": ["Tropical", "Hot", "Humid"],
+      "terrain": ["Jungle", "Mountains", "Coastal"],
+      "vibes": ["Wealthy", "Exotic", "Snake-Hunters", "Vineyards"],
+      "dominant_monsters": ["Yuan-ti", "Snakes", "Jungle Cats"],
+      "major_factions": ["Merchant Princes", "Yuan-ti Purebloods"],
+      "danger_level": "Medium",
+      "keywords": ["Wine", "Crossbows", "Snakes", "Wealth", "Resorts"]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "thindol",
+      "name": "Thindol",
+      "climate": ["Tropical", "Hot"],
+      "terrain": ["Savanna", "Tall Grass", "Hills"],
+      "vibes": ["Isolated", "Primal", "Hidden Danger"],
+      "dominant_monsters": ["Yuan-ti", "Kuo-toa", "Giant Insects"],
+      "major_factions": ["Human Tribes", "Kuo-toa (Underground)"],
+      "danger_level": "High",
+      "keywords": [
+        "Tall Grass",
+        "Fleet-Footed",
+        "Kuo-toa",
+        "Yuan-ti",
+        "Isolation"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
+  },
+  {
+    "type": "Feature",
+    "properties": {
+      "region_id": "lantan",
+      "name": "Lantan",
+      "climate": ["Temperate", "Tropical", "Stormy"],
+      "terrain": ["Islands", "Mountains", "Coastal"],
+      "vibes": ["Technological", "Gnomish", "Advanced", "Secretive"],
+      "dominant_monsters": ["Constructs", "Mechanical Beasts", "Gnomes"],
+      "major_factions": ["Techsmiths of Gond", "Gnomish Inventors"],
+      "danger_level": "Low",
+      "keywords": [
+        "Invention",
+        "Gond",
+        "Smokepowder",
+        "Technology",
+        "Submarines"
+      ]
+    },
+    "geometry": { "type": "Polygon", "coordinates": [] }
   }
 ]
