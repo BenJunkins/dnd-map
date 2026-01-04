@@ -87,6 +87,14 @@ If you want to poke around the code, you can run it on your machine:
 
 ---
 
+## Legal Disclaimer
+
+**Faerun Monster Explorer** is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.
+
+The monster data is provided via the [DnD 5e API](https://www.dnd5eapi.co/) under the Creative Commons (CC-BY-4.0) license.
+
+---
+
 ## Contact
 
 Built by **Benjamin Junkins** as a Cloud & Frontend Portfolio Project.

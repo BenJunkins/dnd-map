@@ -10,6 +10,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./styles.css";
 import regionData from "./regions.json";
+import Footer from "./components/Footer.jsx";
 
 // --- VITE ASSET FIXES ---
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
@@ -218,6 +219,8 @@ const App = () => {
             );
           })}
         </MapContainer>
+
+        <Footer />
       </div>
     </div>
   );

@@ -96,3 +96,21 @@ html {
   background: #ffffff;
   position: relative;
 }
+
+.footer-disclaimer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #aaa;
+  font-size: 10px;
+  text-align: center;
+  padding: 5px 10px;
+  z-index: 1000;
+  pointer-events: none; /* Allows clicking on map items behind the text */
+  box-sizing: border-box; /* Ensures padding doesn't widen the page */
+}
+.footer-disclaimer p {
+  margin: 0;
+}
