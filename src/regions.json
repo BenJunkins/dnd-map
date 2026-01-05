@@ -557,7 +557,7 @@
         "Barbarians"
       ]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[1469,1499],[1414,1493],[1360,1499],[1337,1533],[1328,1583],[1325,1621],[1329,1660],[1354,1686],[1390,1718],[1428,1718],[1458,1722],[1483,1718],[1491,1671],[1488,1580],[1487,1516]]] }
   },
   {
     "type": "Feature",
@@ -578,7 +578,7 @@
         "Masks"
       ]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[1463,1738],[1412,1735],[1401,1767],[1360,1756],[1326,1724],[1295,1729],[1253,1738],[1255,1774],[1252,1811],[1237,1826],[1223,1823],[1211,1854],[1220,1872],[1263,1845],[1322,1815],[1348,1810],[1381,1856],[1416,1902],[1447,1918],[1476,1873],[1480,1809],[1469,1752]]] }
   },
   {
     "type": "Feature",
@@ -593,7 +593,7 @@
       "danger_level": "Medium",
       "keywords": ["Golden Way", "Tuigan", "Silk Road", "Nomads", "Yurts"]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[1409,1915],[1345,1842],[1285,1845],[1254,1870],[1219,1905],[1193,1914],[1158,1908],[1092,1910],[1033,1924],[985,1932],[979,1996],[1155,1995],[1431,1993],[1435,1960]]] }
   },
   {
     "type": "Feature",
@@ -608,7 +608,7 @@
       "danger_level": "Low",
       "keywords": ["Lake Ashane", "Trade", "Farming", "Skirmishes"]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[1338,1667],[1329,1633],[1292,1650],[1249,1660],[1228,1662],[1223,1718],[1238,1755],[1253,1721],[1301,1697],[1340,1675]]] }
   },
   {
     "type": "Feature",
@@ -629,7 +629,7 @@
         "Kara-Tur Trade"
       ]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[1187,1498],[1162,1496],[1130,1500],[1106,1523],[1102,1574],[1094,1624],[1130,1684],[1170,1700],[1193,1739],[1225,1745],[1214,1701],[1212,1656],[1215,1621],[1187,1594],[1179,1539],[1186,1513]]] }
   },
   {
     "type": "Feature",
@@ -644,7 +644,7 @@
       "danger_level": "High",
       "keywords": ["Dunwood", "Narfell Ruins", "Druids", "Forest", "Isolation"]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[1317,1495],[1285,1473],[1229,1484],[1191,1495],[1203,1564],[1225,1612],[1263,1646],[1293,1649],[1326,1629],[1310,1560],[1317,1510]]] }
   },
   {
     "type": "Feature",
@@ -848,7 +848,7 @@
       "danger_level": "High",
       "keywords": ["Pirates", "Smugglers", "Shipwrecks", "Loot", "Navy"]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[722,292],[691,259],[641,255],[584,296],[573,349],[589,363],[656,374],[704,385],[740,337],[731,295]]] }
   },
   {
     "type": "Feature",
@@ -944,7 +944,7 @@
       "danger_level": "High",
       "keywords": ["Immortal", "Skull", "Dragonisle", "Hurricanes", "Loot"]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[1056,1254],[1025,1236],[996,1230],[974,1223],[948,1239],[939,1296],[950,1345],[1018,1353],[1053,1351],[1065,1298],[1069,1268]]] }
   },
   {
     "type": "Feature",
@@ -959,7 +959,7 @@
       "danger_level": "Low",
       "keywords": ["Spindrift", "Pirates", "Hermits", "No Magic", "Fishing"]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[1020,1403],[1005,1362],[976,1359],[940,1377],[929,1422],[934,1477],[956,1495],[973,1470],[994,1464],[1026,1437]]] }
   },
   {
     "type": "Feature",
@@ -974,7 +974,7 @@
       "danger_level": "Medium",
       "keywords": ["Yuirwood", "Sorcery", "Half-Elves", "Defense", "Magic"]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[1049,1540],[1015,1476],[958,1507],[937,1536],[948,1612],[964,1657],[997,1688],[1016,1716],[1044,1712],[1058,1674],[1042,1624],[1031,1604],[1056,1549],[1054,1524]]] }
   },
   {
     "type": "Feature",
@@ -1104,7 +1104,7 @@
       "danger_level": "High",
       "keywords": ["Gold Dwarves", "Underhome", "Rift", "Mining", "Wealth"]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[477,1583],[446,1589],[407,1584],[374,1609],[369,1664],[413,1688],[473,1664],[497,1611],[489,1579]]] }
   },
   {
     "type": "Feature",
@@ -1155,7 +1155,7 @@
       "danger_level": "Medium",
       "keywords": ["Magic", "Skyships", "Wizards", "Isolation", "Mountains"]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[35,1020],[120,1056],[183,1092],[213,1143],[230,1227],[244,1310],[238,1349],[212,1387],[162,1404],[103,1393],[34,1364],[6,1350],[3,1142],[13,1030]]] }
   },
   {
     "type": "Feature",
@@ -1221,7 +1221,7 @@
         "Warehouse"
       ]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[352,850],[297,847],[275,871],[296,915],[344,941],[381,920],[366,868]]] }
   },
   {
     "type": "Feature",
@@ -1251,7 +1251,7 @@
       "danger_level": "Medium",
       "keywords": ["Wine", "Crossbows", "Snakes", "Wealth", "Resorts"]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[180,696],[175,736],[171,780],[179,816],[196,834],[217,833],[230,822],[243,787],[244,751],[223,715],[190,703]]] }
   },
   {
     "type": "Feature",
@@ -1272,7 +1272,7 @@
         "Isolation"
       ]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[175,554],[147,530],[136,564],[113,581],[69,586],[30,578],[13,576],[12,645],[36,717],[74,726],[81,765],[96,776],[128,757],[146,728],[139,711],[136,669],[138,625],[154,576],[166,562]]] }
   },
   {
     "type": "Feature",
@@ -1293,6 +1293,6 @@
         "Submarines"
       ]
     },
-    "geometry": { "type": "Polygon", "coordinates": [] }
+    "geometry": { "type": "Polygon", "coordinates": [[[530,168],[480,148],[421,157],[363,167],[336,200],[368,242],[443,264],[528,252],[554,204],[532,172]]] }
   }
 ]
