@@ -1,4 +1,4 @@
-# Faerun Monster Explorer
+# Faerun Monster Atlas
 
 ![Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=flat-square)
 ![Build](https://img.shields.io/badge/Build-Passing-success?style=flat-square)
