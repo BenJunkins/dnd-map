@@ -1,6 +1,6 @@
 // smooth region boundaries
 import fs from 'fs';
-import { bakeCurves } from './bake_lines.js';
+import { bakeLines } from './bake_lines.js';
 
 //exclude .json file type it is included in next step
 const fileName = 'regions';
@@ -13,7 +13,7 @@ console.log(`Resource: Loading regions from ${inputFile}...`);
 const rawData = fs.readFileSync(inputFile, 'utf8');
 const sourceData = JSON.parse(rawData);
 
-const finalData = bakeCurves(sourceData, { 
+const finalData = bakeLines(sourceData, { 
     resolution: 10000, 
     sharpness: 0.85 
 });
