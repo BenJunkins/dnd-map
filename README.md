@@ -35,16 +35,46 @@ Users can explore a map of Faerun, hover over distinct regions (like the Sword C
 
 ## Architecture & Tech Stack
 
-This project uses a fully **Serverless Architecture** on AWS to ensure scalability and zero idle costs.
+This project leverages a **Serverless Architecture** on AWS to ensure scalability, zero idle costs, and separation of concerns between data ingestion and presentation.
 
-| Component         | Technology                 | Role                                 |
-| :---------------- | :------------------------- | :----------------------------------- |
-| **Frontend**      | React (Vite)               | Interactive UI & State Management    |
-| **Mapping**       | Leaflet.js + React-Leaflet | Image Overlay & Polygon Rendering    |
-| **Hosting**       | AWS Amplify                | CI/CD & Static Site Hosting          |
-| **API**           | AWS API Gateway            | RESTful Endpoint management          |
-| **Backend Logic** | AWS Lambda (Python)        | Data fetching & database interfacing |
-| **Database**      | Amazon DynamoDB            | NoSQL storage for monster stats      |
+```mermaid
+graph TD
+    %% Nodes
+    User([👤 User / Browser])
+    Amplify[AWS Amplify<br/>(Hosting & CI/CD)]
+    APIGW[AWS API Gateway<br/>(REST API)]
+    
+    subgraph Backend [Serverless Backend]
+        ReqLambda[Lambda Function<br/>(Request Handler)]
+        IngestLambda[Lambda Function<br/>(Data Ingestion)]
+        DDB[(Amazon DynamoDB<br/>Monster Data)]
+    end
+    
+    ExternalAPI[🌍 D&D 5e API<br/>(Source Data)]
+
+    %% Data Flow Connections
+    User -- "1. Loads App" --> Amplify
+    User -- "2. Fetches Monsters" --> APIGW
+    APIGW -- "Routes Request" --> ReqLambda
+    ReqLambda -- "3. Queries Data" --> DDB
+    DDB -.-> ReqLambda
+    ReqLambda -.-> APIGW
+    APIGW -.-> User
+
+    %% Ingestion Flow (Offline/Admin)
+    IngestLambda -- "Periodic Fetch" --> ExternalAPI
+    ExternalAPI -- "Raw JSON" --> IngestLambda
+    IngestLambda -- "Writes Optimized Data" --> DDB
+
+    %% Styling
+    classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:white;
+    classDef ext fill:#85C1E9,stroke:#232F3E,stroke-width:2px,color:black;
+    classDef user fill:#2ECC71,stroke:#232F3E,stroke-width:2px,color:white;
+
+    class Amplify,APIGW,ReqLambda,IngestLambda,DDB aws;
+    class ExternalAPI ext;
+    class User user;
+```
 
 ### Data Flow
 
