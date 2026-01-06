@@ -40,17 +40,17 @@ This project leverages a **Serverless Architecture** on AWS to ensure scalabilit
 ```mermaid
 graph TD
     %% Nodes
-    User([👤 User / Browser])
-    Amplify[AWS Amplify<br/>(Hosting & CI/CD)]
-    APIGW[AWS API Gateway<br/>(REST API)]
+    User([User / Browser])
+    Amplify["AWS Amplify<br/>(Hosting & CI/CD)"]
+    APIGW["AWS API Gateway<br/>(REST API)"]
     
     subgraph Backend [Serverless Backend]
-        ReqLambda[Lambda Function<br/>(Request Handler)]
-        IngestLambda[Lambda Function<br/>(Data Ingestion)]
-        DDB[(Amazon DynamoDB<br/>Monster Data)]
+        ReqLambda["Lambda Function<br/>(Request Handler)"]
+        IngestLambda["Lambda Function<br/>(Data Ingestion)"]
+        DDB["(Amazon DynamoDB<br/>Monster Data)"]
     end
     
-    ExternalAPI[🌍 D&D 5e API<br/>(Source Data)]
+    ExternalAPI["D&D 5e API<br/>(Source Data)"]
 
     %% Data Flow Connections
     User -- "1. Loads App" --> Amplify
