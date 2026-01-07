@@ -53,6 +53,8 @@ This project uses a fully **Serverless Architecture** on AWS to ensure scalabili
 3.  **Response:** A second Lambda function scans the database and returns JSON to the client.
 4.  **Visualization:** React maps the data points to custom polygons drawn over the Faerun image.
 
+![AWS Project (1)](https://github.com/user-attachments/assets/473a8b4b-086b-4dfe-8a68-0d72bbbe44a6)
+
 ---
 
 ## How to Run Locally
