@@ -1,13 +1,13 @@
 // Curves straight lines using turf
-import * as turf from '@turf/turf';
+import * as turf from "@turf/turf";
 
-@param {Array} regions
-@param {Object} options
-
-export const bakeLines = (regions, { resolution = 10000, sharpness = 0.85 } = {}) => {
+export const bakeLines = (regions) => {
   return regions.map((region) => {
     // Skip empty regions
-    if (!region.geometry.coordinates || region.geometry.coordinates.length === 0) {
+    if (
+      !region.geometry.coordinates ||
+      region.geometry.coordinates.length === 0
+    ) {
       return region;
     }
 
@@ -24,10 +24,12 @@ export const bakeLines = (regions, { resolution = 10000, sharpness = 0.85 } = {}
 
       // Apply smoothing
       const polygon = turf.polygon([coords]);
-      const smoothed = turf.bezierSpline(polygon, { resolution, sharpness });
+      const smoothed = turf.polygonSmooth(polygon, { iterations: 3 });
 
       // Flip coords back
-      const leafletCoords = smoothed.geometry.coordinates[0].map((pt) => [pt[1], pt[0]]);
+      const leafletCoords = smoothed.features[0].geometry.coordinates[0].map(
+        (pt) => [pt[1], pt[0]],
+      );
 
       return {
         ...region,

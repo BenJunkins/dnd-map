@@ -1,22 +1,19 @@
 // smooth region boundaries
-import fs from 'fs';
-import { bakeLines } from './bake_lines.js';
+import fs from "fs";
+import { bakeLines } from "./bake_lines.js";
 
 //exclude .json file type it is included in next step
-const fileName = 'regions';
+const fileName = "regions";
 
 const inputFile = `./src/${fileName}.json`;
 const outputFile = `./src/${fileName}_smooth.json`;
 
 console.log(`Resource: Loading regions from ${inputFile}...`);
 
-const rawData = fs.readFileSync(inputFile, 'utf8');
+const rawData = fs.readFileSync(inputFile, "utf8");
 const sourceData = JSON.parse(rawData);
 
-const finalData = bakeLines(sourceData, { 
-    resolution: 10000, 
-    sharpness: 0.85 
-});
+const finalData = bakeLines(sourceData);
 
 fs.writeFileSync(outputFile, JSON.stringify(finalData, null, 2));
 console.log(`Success! Smoothed data saved to ${outputFile}`);
