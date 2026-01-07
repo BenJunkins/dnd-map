@@ -39,12 +39,12 @@ This project uses a fully **Serverless Architecture** on AWS to ensure scalabili
 
 | Component         | Technology                 | Role                                 |
 | :---------------- | :------------------------- | :----------------------------------- |
-| **Frontend**      | React (Vite)               | Interactive UI & State Management    |
-| **Mapping**       | Leaflet.js + React-Leaflet | Image Overlay & Polygon Rendering    |
-| **Hosting**       | AWS Amplify                | CI/CD & Static Site Hosting          |
-| **API**           | AWS API Gateway            | RESTful Endpoint management          |
+| **Frontend** | React (Vite)               | Interactive UI & State Management    |
+| **Mapping** | Leaflet.js + React-Leaflet | Image Overlay & Polygon Rendering    |
+| **Hosting** | AWS Amplify                | CI/CD & Static Site Hosting          |
+| **API** | AWS API Gateway            | RESTful Endpoint management          |
 | **Backend Logic** | AWS Lambda (Python)        | Data fetching & database interfacing |
-| **Database**      | Amazon DynamoDB            | NoSQL storage for monster stats      |
+| **Database** | Amazon DynamoDB            | NoSQL storage for monster stats      |
 
 ### Data Flow
 
