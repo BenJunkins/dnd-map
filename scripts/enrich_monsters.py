@@ -82,7 +82,7 @@ def classify_monster(monsterData, regionNames, regionContext):
     
     CRITICAL RULES:
     1. Return ONLY a valid JSON object. No Markdown. No conversational text.
-    2. Format: {{"regions": ["Region A", "Region B", "Region C", ...]}}
+    2. Format: {{"region": ["Region A", "Region B", "Region C", ...]}}
     3. The "region" must match one of the names provided exactly.
     
     Monster to Assign:
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     count = 0
     for m in monsters:
         # If already classified then skip the monster
-        if "region" in m and m["region"] != "Unknown":
+        if ("region" in m) and (m["region"] != {"SS": ["Unknown"]}):
             print(f"Skipping {m['name']} (Already in {m['region']})")
             continue
 
