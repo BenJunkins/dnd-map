@@ -2,12 +2,14 @@ import boto3
 import json
 import time
 import os
+import re
 from botocore.exceptions import ClientError
 
 # ---Configuration---
+current_dir = os.path.dirname(os.path.abspath(__file__))
 tableName = "DnD_Monsters"
 modelID = "us.anthropic.claude-haiku-4-5-20251001-v1:0"
-regionsFile = ".src/regions.json"
+regionsFile = os.path.join(current_dir, "../src/regions.json")
 dynamoDB = boto3.resource("dynamodb", region_name="us-east-1")
 bedrock = boto3.client("bedrock-runtime", region_name="us-east-1")
 table = dynamoDB.Table(tableName)
@@ -79,7 +81,7 @@ def classify_monster(monsterData, regionNames, regionContext):
     {regionContext}
     
     CRITICAL RULES:
-    1. Return ONLY a valid JSON object. Do not write any other text.
+    1. Return ONLY a valid JSON object. No Markdown. No conversational text.
     2. Format: {{"regions": ["Region A", "Region B", "Region C", ...]}}
     3. The "region" must match one of the names provided exactly.
     
@@ -96,32 +98,33 @@ def classify_monster(monsterData, regionNames, regionContext):
             inferenceConfig={"maxTokens": 300, "temperature": 0.1},
         )
         response_text = response["output"]["message"]["content"][0]["text"]
-        return json.loads(response_text)
+        clean_text = re.sub(r"```json\s*", "", response_text)
+        clean_text = re.sub(r"```\s*", "", clean_text)
+
+        return json.loads(clean_text)
 
     except Exception as e:
         print(f"Error classifying {monsterData.get('name')}: {e}")
         return None
 
+
 def update_monster_in_db(monster_name, classification):
     """Updates DynamoDB with the new region"""
-    if not classification: 
+    if not classification:
         return
 
     try:
         table.update_item(
-                Key = {'name': monster_name},
-                UpdateExpression = "set #r = :r",
-                ExpressionAttributeNames = {
-                    '#r': 'region'
-                    },
-                ExpressionAttributeValues = {
-                    ':r': classification['region']
-                    }
-                )
+            Key={"name": monster_name},
+            UpdateExpression="set #r = :r",
+            ExpressionAttributeNames={"#r": "region"},
+            ExpressionAttributeValues={":r": classification["region"]},
+        )
         return True
     except ClientError as e:
         print(f"DB Error: {e}")
         return False
+
 
 if __name__ == "__main__":
     # Load regions
@@ -139,23 +142,23 @@ if __name__ == "__main__":
     count = 0
     for m in monsters:
         # If already classified then skip the monster
-        if 'region' in m and m['region'] != "Unknown":
+        if "region" in m and m["region"] != "Unknown":
             print(f"Skipping {m['name']} (Already in {m['region']})")
             continue
 
-        print(f"Analyzing {m['name']}...", end = " ", flush = True)
-        
+        print(f"Analyzing {m['name']}...", end=" ", flush=True)
+
         # Classify monsters
         result = classify_monster(m, reg_names, reg_context)
 
         if result:
             # Update Database
             print(f"-> {result['region']}")
-            update_monster_in_db(m['name'], result)
+            update_monster_in_db(m["name"], result)
             count += 1
         else:
             print("-> Failed")
 
-        time.sleep(0.3)  # Avoid AWS throttling
+        time.sleep(30)  # Avoid AWS throttling
 
     print(f"\n Done! Updated {count} monsters.")
