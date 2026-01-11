@@ -97,6 +97,15 @@ const App = () => {
   // Get monsters specifically for the sidebar list
   const sidebarList = hoveredRegion
     ? displayMonsters.filter((monster) => {
+        //DynamoDB oject to array fix
+        let regions = [];
+        if (Array.isArray(monster.region)) {
+          regions = monster.region;
+        } else if (monster.region && monster.region.SS) {
+          regions = monster.region.SS;
+        } else if (typeof monster.region === "string") {
+          regions = [monster.region];
+        }
         return monster.region.includes(hoveredRegion);
       })
     : [];
