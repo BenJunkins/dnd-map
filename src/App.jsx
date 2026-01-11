@@ -106,7 +106,7 @@ const App = () => {
         } else if (typeof monster.region === "string") {
           regions = [monster.region];
         }
-        return monster.region.includes(hoveredRegion);
+        return monster.regions.includes(hoveredRegion);
       })
     : [];
 
