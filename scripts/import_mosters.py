@@ -76,7 +76,7 @@ def import_monsters():
                     "actions": clean_monster.get("actions", []),
                     "legendary_actions": clean_monster.get("legendary_actions", []),
                     "reactions": clean_monster.get("reactions", []),
-                    "region": {"SS": ["Unknown"]},
+                    "region": ["Unknown"],
                 }
                 batch.put_item(Item=item)
         return {
