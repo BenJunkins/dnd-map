@@ -32,7 +32,7 @@ const IMAGE_BOUNDS = [
 ]; // Aspect ratio
 const API_URL =
   "https://eipiir7l70.execute-api.us-east-1.amazonaws.com/monsters";
-const DEV_MODE = true; // SET TO FALSE when done tracing regions!
+const DEV_MODE = false;
 
 // --- HELPER COMPONENT: COORDINATE LOGGER ---
 // Use this to trace your regions. Click the map, check the console.
@@ -64,15 +64,9 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(API_URL);
-        const rawData = await res.json();
-
-        // Randomly assign regions for demo purposes
-        const regionNames = regionData.map((r) => r.properties.name);
-        const enriched = rawData.map((m) => ({
-          ...m,
-          region: regionNames[Math.floor(Math.random() * regionNames.length)],
-        }));
+        const response = await fetch(API_URL);
+        const rawData = await response.json();
+        const enriched = rawData;
 
         setAllMonsters(enriched);
         setDisplayMonsters(enriched);
@@ -90,10 +84,10 @@ const App = () => {
 
   const applyFilters = () => {
     // Filter by CR first
-    const filtered = allMonsters.filter((m) => {
-      if (m.cr <= 4 && filters.low) return true;
-      if (m.cr >= 5 && m.cr <= 10 && filters.mid) return true;
-      if (m.cr >= 11 && filters.high) return true;
+    const filtered = allMonsters.filter((monster) => {
+      if (monster.cr <= 4 && filters.low) return true;
+      if (monster.cr >= 5 && monster.cr <= 10 && filters.mid) return true;
+      if (monster.cr >= 11 && filters.high) return true;
       return false;
     });
     setDisplayMonsters(filtered);
@@ -102,7 +96,9 @@ const App = () => {
   // --- DERIVED DATA ---
   // Get monsters specifically for the sidebar list
   const sidebarList = hoveredRegion
-    ? displayMonsters.filter((m) => m.region === hoveredRegion)
+    ? displayMonsters.filter((monster) =>
+        monster.region.includes(hoveredRegion),
+      )
     : [];
 
   return (
