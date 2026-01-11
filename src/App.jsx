@@ -96,9 +96,9 @@ const App = () => {
   // --- DERIVED DATA ---
   // Get monsters specifically for the sidebar list
   const sidebarList = hoveredRegion
-    ? displayMonsters.filter((monster) =>
-        monster.region.includes(hoveredRegion),
-      )
+    ? displayMonsters.filter((monster) => {
+        return monster.region.includes(hoveredRegion);
+      })
     : [];
 
   return (
