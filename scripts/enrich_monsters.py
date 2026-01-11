@@ -108,14 +108,14 @@ def classify_monster(monsterData, regionNames, regionContext):
         return None
 
 
-def update_monster_in_db(monster_name, classification):
+def update_monster_in_db(monster_id, classification):
     """Updates DynamoDB with the new region"""
     if not classification:
         return
 
     try:
         table.update_item(
-            Key={"name": monster_name},
+            Key={"id": monster_id},
             UpdateExpression="set #r = :r",
             ExpressionAttributeNames={"#r": "region"},
             ExpressionAttributeValues={":r": classification["region"]},
@@ -154,7 +154,7 @@ if __name__ == "__main__":
         if result:
             # Update Database
             print(f"-> {result['region']}")
-            update_monster_in_db(m["name"], result)
+            update_monster_in_db(m["id"], result)
             count += 1
         else:
             print("-> Failed")
