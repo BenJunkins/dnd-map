@@ -35,10 +35,15 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--bg-dark); /* Dark backdrop for the map table */
+  color: var(--text-main);
+  font-family: var(--font-body);
+  background-image: radial-gradient(circle, #2a2a2a 0%, #111111 100%);
 }
 
 h1 {
