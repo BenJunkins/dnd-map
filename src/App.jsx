@@ -248,8 +248,12 @@ const App = () => {
         <MapContainer
           crs={L.CRS.Simple}
           bounds={IMAGE_BOUNDS}
+          maxBounds={IMAGE_BOUNDS}
+          maxBoundsViscosity={0.6}
           center={[500, 500]}
           zoom={-1}
+          minZoom={-4}
+          maxZoom={4}
           scrollWheelZoom={true}
           style={{ height: "100%", width: "100%" }}
         >
