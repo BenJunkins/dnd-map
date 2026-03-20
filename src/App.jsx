@@ -116,6 +116,7 @@ const App = () => {
       <div className="sidebar">
         <div className="sidebar-header">
           <h2>Faerun Monster Atlas</h2>
+          <div className="tapered-rule"></div>
         </div>
 
         <div className="sidebar-content">
@@ -158,7 +159,7 @@ const App = () => {
           <div className="monster-list">
             <h3>{hoveredRegion || "Map Explorer"}</h3>
             {!hoveredRegion && (
-              <p style={{ color: "#666" }}>
+              <p style={{ color: "#666", fontStyle: "italic", marginTop: "15px" }}>
                 Hover over a region to see its inhabitants.
               </p>
             )}
@@ -179,7 +180,7 @@ const App = () => {
                     </div>
                   </div>
                 ))
-              : hoveredRegion && <p>No matching monsters found here.</p>}
+              : hoveredRegion && <p>No matching monsters found here. Safe travels...</p>}
           </div>
         </div>
       </div>
@@ -207,10 +208,11 @@ const App = () => {
                 key={idx}
                 positions={region.geometry.coordinates}
                 pathOptions={{
-                  color: isHovered ? "#f1c40f" : "rgba(255, 255, 255, 0.3)", // Yellow if hovered, Dark Blue if not
-                  fillColor: isHovered ? "#f1c40f" : "transparent",
-                  fillOpacity: isHovered ? 0.3 : 0,
-                  weight: isHovered ? 3 : 1,
+                    color: isHovered ? "var(--dnd-gold)" : "rgba(184, 154, 103, 0.4)", // Gold outline
+                    fillColor: isHovered ? "var(--dnd-red)" : "transparent", // Crimson fill on hover
+                    fillOpacity: isHovered ? 0.4 : 0,
+                    weight: isHovered ? 3 : 1,
+                    dashArray: isHovered ? null : "4 4", // Dashed cartography lines by default
                 }}
                 eventHandlers={{
                   mouseover: () => setHoveredRegion(region.properties.name),
