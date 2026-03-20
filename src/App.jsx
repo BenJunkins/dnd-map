@@ -242,6 +242,9 @@ const App = () => {
 
       {/* MAP */}
       <div className="map-area">
+        {/* Fog of War Overlay */}
+        <div className="map-vignette"></div>
+        
         <MapContainer
           crs={L.CRS.Simple}
           bounds={IMAGE_BOUNDS}
