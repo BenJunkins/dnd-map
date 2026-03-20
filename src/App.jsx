@@ -62,6 +62,7 @@ const App = () => {
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [filters, setFilters] = useState({ low: true, mid: true, high: true });
   const [sortOption, setSortOption] = useState("name-asc");
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   // --- FETCH DATA ---
   useEffect(() => {
@@ -134,9 +135,14 @@ const App = () => {
   return (
     <div className="app-container">
       {/* SIDEBAR */}
-      <div className="sidebar">
+      <div className="sidebar ${isDrawerOpen ? "drawer-open" : ""}">
         <div className="sidebar-header">
-          <h2>Faerun Monster Atlas</h2>
+          {/* Close button only visible on mobile */}
+          <button className="close-drawer-btn" onClick={() => setIsDrawerOpen(false)}>
+            ▼ Close Atlas ▼
+          </button>
+          
+          <h2>Faerûn Monster Atlas</h2>
           <div className="tapered-rule"></div>
         </div>
 
@@ -227,7 +233,7 @@ const App = () => {
                     </div>
                   </div>
                 ))
-              : activeRegion && <p>No matching monsters found here. Safe travels...</p>}
+              : activeRegion && <p style={{ marginTop: "15px" }}>No matching monsters found here. Safe travels...</p>}
           </div>
         </div>
       </div>
@@ -267,7 +273,15 @@ const App = () => {
                 eventHandlers={{
                   mouseover: () => setHoveredRegion(region.properties.name),
                   mouseout: () => setHoveredRegion(null),
-                  click: () => setSelectedRegion(isSelected ? null : region.properties.name),
+                  click: () => {
+                      // Toggle selection
+                      const newSelection = isSelected ? null : region.properties.name;
+                      setSelectedRegion(newSelection);
+                      // If a region is selected, automatically open the drawer on mobile
+                      if (newSelection) {
+                        setIsDrawerOpen(true);
+                      }
+                    },
                 }}
               >
                 <Tooltip sticky direction="top">
@@ -277,6 +291,16 @@ const App = () => {
             );
           })}
         </MapContainer>
+
+        {/* Floating toggle button for mobile only */}
+        {!isDrawerOpen && (
+          <button 
+            className="drawer-toggle-btn" 
+            onClick={() => setIsDrawerOpen(true)}
+          >
+            📖 Open Atlas
+          </button>
+        )}
 
         <Footer />
       </div>
