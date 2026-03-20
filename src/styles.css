@@ -97,6 +97,13 @@ html {
   margin: 0;
 }
 
+.leaflet-image-layer {
+  opacity: 0.9;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 3%, black 97%, transparent 100%), linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+}
+
 /* Map Area */
 .map-area {
   flex-grow: 1;
@@ -121,6 +128,18 @@ html {
   display: block;
   max-width: none;
   filter: sepia(0.2) contrast(1.1); /* Adds a slight sepia tone to make the map feel older */
+}
+
+.map-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Crucial: lets you click the map underneath */
+  z-index: 500; /* Sits above the map layers, but below the sidebar */
+  /* Creates a soft radial shadow fading into the dark background */
+  box-shadow: inset 0 0 150px 80px var(--bg-dark);
 }
 
 /* Monster List */
