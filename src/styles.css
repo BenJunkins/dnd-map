@@ -97,9 +97,29 @@ html {
   margin: 0;
 }
 
+.leaflet-container {
+  background: var(--bg-dark) !important;
+}
+
+/* Remove the default white browser focus outline on clicked polygons and the map itself */
+.leaflet-container:focus,
+.leaflet-interactive:focus {
+  outline: none;
+}
+
 .leaflet-image-layer {
   -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
   mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+}
+
+.leaflet-tooltip {
+  background-color: var(--parchment);
+  border: 1px solid var(--dnd-gold);
+  color: var(--dnd-red);
+  font-family: var(--font-header);
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 /* Map Area */
@@ -182,20 +202,6 @@ html {
   color: #555;
   margin-top: 6px;
   font-style: italic;
-}
-
-.leaflet-container {
-  background: var(--bg-dark) !important;
-}
-
-.leaflet-tooltip {
-  background-color: var(--parchment);
-  border: 1px solid var(--dnd-gold);
-  color: var(--dnd-red);
-  font-family: var(--font-header);
-  font-weight: bold;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .placeholder-text {
