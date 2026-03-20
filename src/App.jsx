@@ -181,7 +181,7 @@ const App = () => {
               ? sidebarList.map((monster) => (
                   <div key={monster.id} className="monster-card">
                     <a
-                      href={`https://www.dnd5eapi.co/api/monsters/${monster.id}`}
+                      href={`https://www.dndbeyond.com/monsters/${monster.id}`}
                       target="_blank"
                       rel="noreferrer"
                       className="monster-name"
