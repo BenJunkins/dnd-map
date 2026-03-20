@@ -1,0 +1,28 @@
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column-reverse; /* Map goes on top, sidebar on bottom */
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 50vh; /* Sidebar takes up exactly half the screen */
+    border-right: none;
+    border-top: 3px solid var(--dnd-gold);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5); /* Shadow drops upward */
+    padding: 15px;
+  }
+
+  .map-area {
+    width: 100%;
+    height: 50vh; /* Map takes up the other half */
+    flex-grow: 0;
+  }
+
+  .sidebar-header h2 {
+    font-size: 1.8rem; /* Slightly smaller header for mobile */
+  }
+  
+  .custom-footer {
+    display: none; /* Hide footer on mobile to save precious screen real estate */
+  }
+}
