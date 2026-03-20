@@ -58,6 +58,7 @@ const App = () => {
   const [allMonsters, setAllMonsters] = useState([]);
   const [displayMonsters, setDisplayMonsters] = useState([]);
   const [hoveredRegion, setHoveredRegion] = useState(null);
+  const [selectedRegion, setSelectedRegion] = useState(null);
   const [filters, setFilters] = useState({ low: true, mid: true, high: true });
 
   // --- FETCH DATA ---
@@ -94,8 +95,10 @@ const App = () => {
   };
 
   // --- DERIVED DATA ---
+  const activeRegion = selectedRegion || hoveredRegion;
+  
   // Get monsters specifically for the sidebar list
-  const sidebarList = hoveredRegion
+  const sidebarList = activeRegion
     ? displayMonsters.filter((monster) => {
         //DynamoDB oject to array fix
         let regions = [];
@@ -106,7 +109,7 @@ const App = () => {
         } else if (typeof monster.region === "string") {
           regions = [monster.region];
         }
-        return regions.includes(hoveredRegion);
+        return regions.includes(activeRegion);
       })
     : [];
 
@@ -157,10 +160,20 @@ const App = () => {
 
           {/* Monster List */}
           <div className="monster-list">
-            <h3>{hoveredRegion || "Map Explorer"}</h3>
-            {!hoveredRegion && (
+            <h3>
+              {activeRegion || "Map Explorer"}
+              {selectedRegion && (
+                  <button 
+                    onClick={() => setSelectedRegion(null)}
+                    style={{ float: "right", background: "none", border: "none", color: "var(--dnd-red-light)", cursor: "pointer", fontFamily: "var(--font-header)", fontSize: "0.6em", fontWeight: "bold" }}
+                  >
+                    [ CLEAR ]
+                  </button>
+                )}
+            </h3>
+            {!activeRegion && (
               <p style={{ color: "#666", fontStyle: "italic", marginTop: "15px" }}>
-                Hover over a region to see its inhabitants.
+                Hover or click a region on the map to reveal its local fauna and monstrosities.
               </p>
             )}
 
@@ -180,7 +193,7 @@ const App = () => {
                     </div>
                   </div>
                 ))
-              : hoveredRegion && <p>No matching monsters found here. Safe travels...</p>}
+              : activeRegion && <p>No matching monsters found here. Safe travels...</p>}
           </div>
         </div>
       </div>
@@ -203,20 +216,24 @@ const App = () => {
           {/* Draw Regions */}
           {regionData.map((region, idx) => {
             const isHovered = hoveredRegion === region.properties.name;
+            const isSelected = selectedRegion === region.properties.name;
+            const isActive = isHovered || isSelected;
+          
             return (
               <Polygon
                 key={idx}
                 positions={region.geometry.coordinates}
                 pathOptions={{
-                    color: isHovered ? "var(--dnd-gold)" : "rgba(184, 154, 103, 0.4)", // Gold outline
-                    fillColor: isHovered ? "var(--dnd-red)" : "transparent", // Crimson fill on hover
-                    fillOpacity: isHovered ? 0.4 : 0,
-                    weight: isHovered ? 3 : 1,
-                    dashArray: isHovered ? null : "4 4", // Dashed cartography lines by default
+                    color: isActive ? "var(--dnd-gold)" : "rgba(184, 154, 103, 0.4)", // Gold outline
+                    fillColor: isActive ? "var(--dnd-red)" : "transparent", // Crimson fill on hover
+                    fillOpacity: isActive ? 0.4 : 0,
+                    weight: isActive ? 3 : 1,
+                    dashArray: isActive ? null : "4 4", // Dashed cartography lines by default
                 }}
                 eventHandlers={{
                   mouseover: () => setHoveredRegion(region.properties.name),
                   mouseout: () => setHoveredRegion(null),
+                  click: () => setSelectedRegion(isSelected ? null : region.properties.name),
                 }}
               >
                 <Tooltip sticky direction="top">
