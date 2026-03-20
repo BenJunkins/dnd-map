@@ -17,16 +17,29 @@ html {
 }
 
 .filter-group {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ccc;
+  background-color: var(--parchment-dark);
+  border: 1px solid var(--dnd-gold);
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+}
+
+.filter-group h4 {
+  font-family: var(--font-header);
+  color: var(--dnd-red);
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--dnd-gold);
+  padding-bottom: 5px;
 }
 
 .filter-label {
   display: block;
-  margin: 8px 0;
-  color: #171717;
+  margin-bottom: 8px;
   cursor: pointer;
+  font-weight: 500;
 }
 
 .footer-disclaimer {
@@ -51,8 +64,8 @@ html {
 /* Map Area */
 .map-area {
   flex-grow: 1;
-  background: #ffffff;
   position: relative;
+  background-color: var(--bg-dark);
 }
 
 .map-container {
@@ -75,10 +88,12 @@ html {
 }
 
 /* Monster List */
-.monster-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+.monster-list h3 {
+  font-family: var(--font-header);
+  color: var(--dnd-red);
+  border-bottom: 2px solid var(--dnd-red-light);
+  padding-bottom: 5px;
+  font-size: 1.5rem;
 }
 
 .monster-item {
@@ -94,26 +109,40 @@ html {
 }
 
 .monster-card {
-  background: white;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-left: 5px solid #3498db;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--parchment-dark);
 }
 
 .monster-name {
   font-weight: 700;
   color: var(--dnd-red);
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.monster-name:hover {
+  text-decoration: underline;
 }
 
 .monster-stats {
   font-size: 0.9em;
-  font-weight: bold;
-  background: var(--parchment-dark);
-  padding: 2px 8px;
-  border-radius: 4px;
+  color: #555;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+.leaflet-container {
+  background: var(--bg-dark) !important;
+}
+
+.leaflet-tooltip {
+  background-color: var(--parchment);
   border: 1px solid var(--dnd-gold);
+  color: var(--dnd-red);
+  font-family: var(--font-header);
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .placeholder-text {
@@ -181,25 +210,29 @@ html {
   width: 400px;
   background-color: var(--parchment);
   background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png"); /* Subtle paper texture */
-  padding: 30px;
-  border-left: 2px solid #fff;
-  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-  z-index: 10; /* Keep above map */
+  padding: 25px;
+  border-right: 2px solid var(--dnd-gold);
+  box-shadow: 5px 0 15px rgba(0, 0, 0, 0.8);
+  z-index: 1000; /* Keep above map */
   overflow-y: auto;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
-.sidebar-header {
-  padding: 20px;
-  background: #b3383e;
-  color: white;
+.sidebar-header h2 {
+  font-family: var(--font-header);
+  color: var(--dnd-red);
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .sidebar-content {
   flex-grow: 1;
-  overflow-y: auto;
-  padding: 20px;
-  color: #171717;
 }
 
 .svg-overlay {
@@ -214,23 +247,29 @@ html {
 /* The iconic 5e tapered red line */
 .tapered-rule {
   height: 5px;
-  background: linear-gradient(90deg, var(--dnd-red-light) 0%, var(--dnd-red) 50%, transparent 100%);
-  margin: 15px 0;
+  background: linear-gradient(90deg, transparent 0%, var(--dnd-red) 50%, transparent 100%);
+  margin: 15px 0 25px 0;
   border: none;
+  width: 100%;
 }
 
 .update-btn {
-  background: #b3383e;
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
+  background: linear-gradient(135deg, var(--parchment-dark) 0%, #d4c5a9 100%);
+  border: 1px solid var(--dnd-gold);
+  color: var(--dnd-red);
+  font-family: var(--font-header);
+  font-weight: 700;
+  padding: 10px 15px;
   border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .update-btn:hover {
-  background: #852a2e;
+  background: var(--dnd-gold);
+  color: var(--bg-dark);
+  transform: translateY(-1px);
 }
