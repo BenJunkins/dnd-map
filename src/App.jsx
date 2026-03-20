@@ -60,6 +60,7 @@ const App = () => {
   const [hoveredRegion, setHoveredRegion] = useState(null);
   const [selectedRegion, setSelectedRegion] = useState(null);
   const [filters, setFilters] = useState({ low: true, mid: true, high: true });
+  const [sortOption, setSortOption] = useState("name-asc");
 
   // --- FETCH DATA ---
   useEffect(() => {
@@ -112,6 +113,22 @@ const App = () => {
         return regions.includes(activeRegion);
       })
     : [];
+  // --- SORTING LOGIC ---
+  const sortedSidebarList = [...sidebarList].sort((a, b) => {
+    const [key, direction] = sortOption.split("-");
+    
+    if (key === "name") {
+      return direction === "asc" 
+        ? a.name.localeCompare(b.name) 
+        : b.name.localeCompare(a.name);
+    } else if (key === "cr") {
+      return direction === "asc" 
+        ? a.cr - b.cr 
+        : b.cr - a.cr;
+    }
+    // Add future sort options here (e.g., HP, Size)
+    return 0;
+  });
 
   return (
     <div className="app-container">
@@ -153,6 +170,22 @@ const App = () => {
               />{" "}
               High (11+)
             </label>
+
+            {/* Sort Controls */}
+            <div style={{ marginTop: "15px", borderTop: "1px solid var(--dnd-gold)", paddingTop: "15px" }}>
+              <h4>Sort By</h4>
+              <select 
+                className="sort-select" 
+                value={sortOption} 
+                onChange={(e) => setSortOption(e.target.value)}
+              >
+                <option value="name-asc">Name (A - Z)</option>
+                <option value="name-desc">Name (Z - A)</option>
+                <option value="cr-asc">Challenge Rating (Low to High)</option>
+                <option value="cr-desc">Challenge Rating (High to Low)</option>
+              </select>
+            </div>
+            
             <button className="update-btn" onClick={applyFilters}>
               Update Map
             </button>
@@ -177,8 +210,8 @@ const App = () => {
               </p>
             )}
 
-            {sidebarList.length > 0
-              ? sidebarList.map((monster) => (
+            {sortedSidebarList.length > 0
+              ? sortedSidebarList.map((monster) => (
                   <div key={monster.id} className="monster-card">
                     <a
                       href={`https://www.dndbeyond.com/monsters/${monster.id}`}
