@@ -22,7 +22,7 @@
     font-size: 1.8rem; /* Slightly smaller header for mobile */
   }
   
-  .custom-footer {
+  .footer-disclaimer {
     display: none; /* Hide footer on mobile to save precious screen real estate */
   }
 }
