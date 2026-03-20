@@ -9,6 +9,7 @@ import {
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import "./styles.css";
+import "./mobile.css";
 import regionData from "./regions_smooth.json";
 import Footer from "./components/Footer.jsx";
 
