@@ -13,88 +13,20 @@ html {
   height: 100vh;
   width: 100vw;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 350px;
-  background: #f8f9fa;
-  border-right: 2px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000; /* Keep above map */
-}
-
-.sidebar-header {
-  padding: 20px;
-  background: #b3383e;
-  color: white;
-}
-.sidebar-content {
-  flex-grow: 1;
-  overflow-y: auto;
-  padding: 20px;
-  color: #171717;
-}
-
-/* Filters */
 .filter-group {
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #ccc;
 }
+
 .filter-label {
   display: block;
   margin: 8px 0;
   color: #171717;
   cursor: pointer;
-}
-.update-btn {
-  background: #b3383e;
-  color: white;
-  border: none;
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
-  border-radius: 4px;
-}
-.update-btn:hover {
-  background: #852a2e;
-}
-
-/* Monster List */
-.monster-list {
-  margin-top: 10px;
-}
-.monster-card {
-  background: white;
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  border-left: 5px solid #3498db;
-}
-.monster-name {
-  font-size: 1.1em;
-  font-weight: bold;
-  color: #2c3e50;
-  text-decoration: none;
-  display: block;
-  margin-bottom: 5px;
-}
-.monster-stats {
-  font-size: 0.9em;
-  color: #7f8c8d;
-}
-
-/* Map Area */
-.map-area {
-  flex-grow: 1;
-  background: #ffffff;
-  position: relative;
 }
 
 .footer-disclaimer {
@@ -111,6 +43,194 @@ html {
   pointer-events: none; /* Allows clicking on map items behind the text */
   box-sizing: border-box; /* Ensures padding doesn't widen the page */
 }
+
 .footer-disclaimer p {
   margin: 0;
+}
+
+/* Map Area */
+.map-area {
+  flex-grow: 1;
+  background: #ffffff;
+  position: relative;
+}
+
+.map-container {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+  border-right: 4px solid var(--dnd-gold);
+  box-shadow: inset -10px 0 20px rgba(0,0,0,0.5);
+}
+
+.map-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.map-image {
+  display: block;
+  max-width: none;
+  filter: sepia(0.2) contrast(1.1); /* Adds a slight sepia tone to make the map feel older */
+}
+
+/* Monster List */
+.monster-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.monster-item {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--parchment-dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.monster-item:last-child {
+  border-bottom: none;
+}
+
+.monster-card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #3498db;
+}
+
+.monster-name {
+  font-weight: 700;
+  color: var(--dnd-red);
+}
+
+.monster-stats {
+  font-size: 0.9em;
+  font-weight: bold;
+  background: var(--parchment-dark);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--dnd-gold);
+}
+
+.placeholder-text {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  margin-top: 50%;
+  font-family: var(--font-header);
+  font-size: 1.2rem;
+}
+
+/* Stat Block Typography */
+.region-title {
+  font-family: var(--font-header);
+  color: var(--dnd-red);
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.region-meta {
+  font-style: italic;
+  margin: 0 0 15px 0;
+  color: #444;
+}
+
+/* --- Map Polygons --- */
+.region-polygon {
+  pointer-events: auto; /* Re-enable pointer events for polygons */
+  cursor: pointer;
+  fill: transparent;
+  stroke: var(--dnd-gold);
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+  transition: all 0.3s ease;
+}
+
+.region-polygon:hover {
+  fill: rgba(184, 154, 103, 0.3); /* Subtle gold fill on hover */
+  stroke-dasharray: none;
+  stroke-width: 3;
+}
+
+.region-polygon.selected {
+  fill: rgba(122, 32, 13, 0.4); /* DnD Red fill when selected */
+  stroke: var(--dnd-red);
+  stroke-width: 3;
+  stroke-dasharray: none;
+}
+
+.section-title {
+  font-family: var(--font-header);
+  color: var(--dnd-red);
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--dnd-red-light);
+  padding-bottom: 5px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 400px;
+  background-color: var(--parchment);
+  background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png"); /* Subtle paper texture */
+  padding: 30px;
+  border-left: 2px solid #fff;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+  z-index: 10; /* Keep above map */
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.sidebar-header {
+  padding: 20px;
+  background: #b3383e;
+  color: white;
+}
+
+.sidebar-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  color: #171717;
+}
+
+.svg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Let clicks pass through to the paths */
+}
+
+/* The iconic 5e tapered red line */
+.tapered-rule {
+  height: 5px;
+  background: linear-gradient(90deg, var(--dnd-red-light) 0%, var(--dnd-red) 50%, transparent 100%);
+  margin: 15px 0;
+  border: none;
+}
+
+.update-btn {
+  background: #b3383e;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.update-btn:hover {
+  background: #852a2e;
 }
