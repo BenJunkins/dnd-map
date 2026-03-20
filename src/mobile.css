@@ -1,28 +1,48 @@
 @media (max-width: 768px) {
   .app-container {
-    flex-direction: column-reverse; /* Map goes on top, sidebar on bottom */
-  }
-
-  .sidebar {
-    width: 100%;
-    height: 50vh; /* Sidebar takes up exactly half the screen */
-    border-right: none;
-    border-top: 3px solid var(--dnd-gold);
-    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5); /* Shadow drops upward */
-    padding: 15px;
+    display: block; /* Removes flex split */
   }
 
   .map-area {
     width: 100%;
-    height: 50vh; /* Map takes up the other half */
-    flex-grow: 0;
+    height: 100vh; /* Map takes full screen */
+  }
+
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65vh; /* Drawer takes up bottom 65% when open */
+    border-right: none;
+    border-top: 3px solid var(--dnd-gold);
+    border-radius: 20px 20px 0 0; /* Rounded native-app corners */
+    box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.7);
+    padding: 15px 20px;
+    
+    /* Animation logic */
+    transform: translateY(100%); 
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* When the drawer state is active */
+  .sidebar.drawer-open {
+    transform: translateY(0); 
+  }
+
+  .drawer-toggle-btn {
+    display: block;
+  }
+
+  .close-drawer-btn {
+    display: block;
   }
 
   .sidebar-header h2 {
-    font-size: 1.8rem; /* Slightly smaller header for mobile */
+    font-size: 1.8rem;
   }
   
   .footer-disclaimer {
-    display: none; /* Hide footer on mobile to save precious screen real estate */
+    display: none; /* Hide footer on mobile */
   }
 }
