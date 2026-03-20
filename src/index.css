@@ -11,6 +11,17 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* --- Modern D&D 5e Theme Variables --- */
+  --dnd-red: #7a200d;
+  --dnd-red-light: #9c2b1b;
+  --dnd-gold: #b89a67;
+  --parchment: #fdf1dc;
+  --parchment-dark: #e8dcc4;
+  --text-main: #242424;
+  --bg-dark: #111111;
+  --font-header: "Cinzel", serif;
+  --font-body: "Lora", serif;
 }
 
 a {
