@@ -16,6 +16,40 @@ html {
   overflow: hidden;
 }
 
+.close-drawer-btn {
+  display: none; /* Hidden by default */
+  background: transparent;
+  border: none;
+  color: var(--dnd-red-light);
+  font-family: var(--font-header);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin: 0 auto 10px auto;
+  text-align: center;
+  width: 100%;
+}
+
+.drawer-toggle-btn {
+  display: none; /* Hidden by default */
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1500;
+  background: linear-gradient(135deg, var(--parchment) 0%, #d4c5a9 100%);
+  border: 2px solid var(--dnd-gold);
+  color: var(--dnd-red);
+  font-family: var(--font-header);
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 12px 24px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
 .filter-group {
   background-color: var(--parchment-dark);
   border: 1px solid var(--dnd-gold);
