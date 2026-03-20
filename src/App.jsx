@@ -115,6 +115,7 @@ const App = () => {
         return regions.includes(activeRegion);
       })
     : [];
+  
   // --- SORTING LOGIC ---
   const sortedSidebarList = [...sidebarList].sort((a, b) => {
     const [key, direction] = sortOption.split("-");
@@ -134,8 +135,9 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {/* SIDEBAR */}
-      <div className="sidebar ${isDrawerOpen ? "drawer-open" : ""}">
+      
+      {/* SIDEBAR / MOBILE DRAWER */}
+      <div className={'sidebar ${isDrawerOpen ? "drawer-open" : ""}'}>
         <div className="sidebar-header">
           {/* Close button only visible on mobile */}
           <button className="close-drawer-btn" onClick={() => setIsDrawerOpen(false)}>
@@ -298,7 +300,7 @@ const App = () => {
             className="drawer-toggle-btn" 
             onClick={() => setIsDrawerOpen(true)}
           >
-            📖 Open Atlas
+            ▲ Open Atlas ▲
           </button>
         )}
 
