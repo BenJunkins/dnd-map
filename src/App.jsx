@@ -137,7 +137,7 @@ const App = () => {
     <div className="app-container">
       
       {/* SIDEBAR / MOBILE DRAWER */}
-      <div className={'sidebar ${isDrawerOpen ? "drawer-open" : ""}'}>
+      <div className={`sidebar ${isDrawerOpen ? "drawer-open" : ""}`}>
         <div className="sidebar-header">
           {/* Close button only visible on mobile */}
           <button className="close-drawer-btn" onClick={() => setIsDrawerOpen(false)}>
