@@ -4,7 +4,7 @@
     <p class="hint">{{localize "REGION_BESTIARY.Settings.SourcePacksHint"}}</p>
     {{#each packs}}
       <label class="rb-check">
-        <input type="checkbox" name="packs.{{this.id}}" {{checked this.enabled}}>
+        <input type="checkbox" data-pack-id="{{this.id}}" {{checked this.enabled}}>
         <span>{{this.label}}</span>
       </label>
     {{else}}
@@ -18,7 +18,7 @@
     <div class="rb-grid">
       {{#each types}}
         <label class="rb-check">
-          <input type="checkbox" name="types.{{this.id}}" {{checked this.enabled}}>
+          <input type="checkbox" data-type-id="{{this.id}}" {{checked this.enabled}}>
           <span>{{this.label}}</span>
         </label>
       {{/each}}
