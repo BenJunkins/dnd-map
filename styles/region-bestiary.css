@@ -1,0 +1,119 @@
+/* Region Bestiary — scoped to .region-bestiary so nothing leaks into core sheets. */
+
+.region-bestiary .hint {
+  font-size: var(--font-size-12, 12px);
+  opacity: 0.8;
+  margin: 0 0 0.5rem;
+}
+
+.region-bestiary fieldset {
+  border: 1px solid var(--color-border-light-tertiary, #7a7971);
+  border-radius: 4px;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 0.75rem 0.75rem;
+}
+
+.region-bestiary legend {
+  font-weight: 600;
+  padding: 0 0.35rem;
+}
+
+.region-bestiary .rb-scroll {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.region-bestiary .rb-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 0.15rem 0.75rem;
+}
+
+.region-bestiary .rb-check {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.region-bestiary .rb-check input {
+  flex: 0 0 auto;
+  margin: 0;
+}
+
+.region-query select[name="regionId"] {
+  width: 100%;
+}
+
+/* Chat result card */
+.region-bestiary.result-card header {
+  border-bottom: 1px solid var(--color-border-light-tertiary, #7a7971);
+  margin-bottom: 0.4rem;
+  padding-bottom: 0.25rem;
+}
+
+.region-bestiary.result-card h3 {
+  margin: 0;
+  border: none;
+}
+
+.region-bestiary .rb-meta {
+  font-size: var(--font-size-11, 11px);
+  text-transform: capitalize;
+  opacity: 0.75;
+  margin: 0;
+}
+
+.region-bestiary .rb-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.region-bestiary .rb-entry {
+  padding: 0.2rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.region-bestiary .rb-entry:last-child {
+  border-bottom: none;
+}
+
+.region-bestiary .rb-entry-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.region-bestiary .rb-entry-head img {
+  border: none;
+  border-radius: 3px;
+  vertical-align: middle;
+  margin-right: 0.3rem;
+  object-fit: cover;
+}
+
+.region-bestiary .rb-signature .content-link {
+  font-weight: 700;
+}
+
+.region-bestiary .rb-stats {
+  font-size: var(--font-size-11, 11px);
+  white-space: nowrap;
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+.region-bestiary .rb-reason {
+  font-size: var(--font-size-11, 11px);
+  font-style: italic;
+  opacity: 0.75;
+  margin: 0.1rem 0 0.2rem 0.2rem;
+}
+
+.region-bestiary .rb-empty {
+  font-style: italic;
+  opacity: 0.8;
+}

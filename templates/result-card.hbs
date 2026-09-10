@@ -1,0 +1,29 @@
+<div class="region-bestiary result-card">
+  <header>
+    <h3>{{region.name}}</h3>
+    <p class="rb-meta">{{terrain}} &middot; {{region.danger}} danger</p>
+  </header>
+
+  {{#if empty}}
+    <p class="rb-empty">{{localize "REGION_BESTIARY.Chat.Empty"}}</p>
+  {{else}}
+    <ol class="rb-list">
+      {{#each entries}}
+        <li class="rb-entry {{#if this.signature}}rb-signature{{/if}}">
+          <div class="rb-entry-head">
+            <a class="content-link" draggable="true" data-uuid="{{this.uuid}}">
+              {{#if this.img}}<img src="{{this.img}}" alt="" width="24" height="24">{{/if}}
+              <span>{{this.name}}</span>
+            </a>
+            {{#if ../reveal}}
+              <span class="rb-stats">{{this.type}}{{#if this.cr}} &middot; CR {{this.cr}}{{/if}}</span>
+            {{/if}}
+          </div>
+          {{#if ../reveal}}
+            <p class="rb-reason">{{this.reason}}</p>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ol>
+  {{/if}}
+</div>

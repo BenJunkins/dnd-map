@@ -1,0 +1,27 @@
+<div class="rb-scroll">
+  <fieldset>
+    <legend>{{localize "REGION_BESTIARY.Settings.SourcePacks"}}</legend>
+    <p class="hint">{{localize "REGION_BESTIARY.Settings.SourcePacksHint"}}</p>
+    {{#each packs}}
+      <label class="rb-check">
+        <input type="checkbox" name="packs.{{this.id}}" {{checked this.enabled}}>
+        <span>{{this.label}}</span>
+      </label>
+    {{else}}
+      <p class="notification warning">{{localize "REGION_BESTIARY.Settings.NoPacks"}}</p>
+    {{/each}}
+  </fieldset>
+
+  <fieldset>
+    <legend>{{localize "REGION_BESTIARY.Settings.AllowedTypes"}}</legend>
+    <p class="hint">{{localize "REGION_BESTIARY.Settings.AllowedTypesHint"}}</p>
+    <div class="rb-grid">
+      {{#each types}}
+        <label class="rb-check">
+          <input type="checkbox" name="types.{{this.id}}" {{checked this.enabled}}>
+          <span>{{this.label}}</span>
+        </label>
+      {{/each}}
+    </div>
+  </fieldset>
+</div>
