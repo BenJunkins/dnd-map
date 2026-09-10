@@ -11,16 +11,18 @@
       {{#each entries}}
         <li class="rb-entry {{#if this.signature}}rb-signature{{/if}}">
           <div class="rb-entry-head">
-            <a class="content-link" draggable="true" data-uuid="{{this.uuid}}">
+            {{!-- data-rb-uuid is wired up client-side in scripts/chat.js, which
+                  decides per viewer whether the link should work at all. --}}
+            <span class="rb-name" data-rb-uuid="{{this.uuid}}">
               {{#if this.img}}<img src="{{this.img}}" alt="" width="24" height="24">{{/if}}
               <span>{{this.name}}</span>
-            </a>
+            </span>
             {{#if ../reveal}}
               <span class="rb-stats">{{this.type}}{{#if this.cr}} &middot; CR {{this.cr}}{{/if}}</span>
             {{/if}}
           </div>
           {{#if ../reveal}}
-            <p class="rb-reason">{{this.reason}}</p>
+            <p class="rb-reason">{{this.reason}}{{#if this.pack}} &middot; {{this.pack}}{{/if}}</p>
           {{/if}}
         </li>
       {{/each}}

@@ -10,6 +10,7 @@ import { MODULE_ID, TEMPLATES } from "./constants.js";
 import { registerSettings } from "./settings.js";
 import { registerIndexFields } from "./compendium.js";
 import { registerSocket } from "./socket.js";
+import { registerChatHooks } from "./chat.js";
 import { loadRegions, allRegions, getRegion } from "./regions.js";
 import { openQuery, RegionQuery } from "./apps/region-query.js";
 import { rankMonsters, scoreMonster } from "./scoring.js";
@@ -38,6 +39,7 @@ Hooks.once("ready", async () => {
 
   await loadTemplatesCompat(Object.values(TEMPLATES));
   registerSocket();
+  registerChatHooks();
 
   game.modules.get(MODULE_ID).api = {
     openQuery,
