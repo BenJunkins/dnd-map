@@ -1,20 +1,27 @@
-<p class="hint">{{localize "REGION_BESTIARY.Query.Hint"}}</p>
+{{!--
+  ApplicationV2 requires each PARTS template to render exactly ONE root element.
+  Keep everything inside this wrapper — sibling roots fail at render time with
+  "Template part must render a single HTML element".
+--}}
+<div class="rb-query-body">
+  <p class="hint">{{localize "REGION_BESTIARY.Query.Hint"}}</p>
 
-<div class="form-group">
-  <label for="rb-search">{{localize "REGION_BESTIARY.Query.Filter"}}</label>
-  <div class="form-fields">
-    <input id="rb-search" type="search" data-rb-search
-           placeholder="{{localize 'REGION_BESTIARY.Query.FilterPlaceholder'}}" autocomplete="off">
+  <div class="form-group">
+    <label for="rb-search">{{localize "REGION_BESTIARY.Query.Filter"}}</label>
+    <div class="form-fields">
+      <input id="rb-search" type="search" data-rb-search
+             placeholder="{{localize 'REGION_BESTIARY.Query.FilterPlaceholder'}}" autocomplete="off">
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <label for="rb-region">{{localize "REGION_BESTIARY.Query.Region"}}</label>
-  <div class="form-fields">
-    <select id="rb-region" name="regionId" size="10">
-      {{#each regions}}
-        <option value="{{this.value}}">{{this.label}}</option>
-      {{/each}}
-    </select>
+  <div class="form-group">
+    <label for="rb-region">{{localize "REGION_BESTIARY.Query.Region"}}</label>
+    <div class="form-fields">
+      <select id="rb-region" name="regionId" size="10">
+        {{#each regions}}
+          <option value="{{this.value}}">{{this.label}}</option>
+        {{/each}}
+      </select>
+    </div>
   </div>
 </div>
