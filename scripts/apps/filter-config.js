@@ -52,10 +52,25 @@ export class FilterConfig extends HandlebarsApplicationMixin(ApplicationV2) {
     };
   }
 
-  static async #onSubmit(_event, _form, formData) {
-    const data = foundry.utils.expandObject(formData.object);
-    await game.settings.set(MODULE_ID, SETTINGS.SOURCE_PACKS, data.packs ?? {});
-    await game.settings.set(MODULE_ID, SETTINGS.ALLOWED_TYPES, data.types ?? {});
+  /**
+   * Read the checkboxes straight off the form rather than through FormData.
+   *
+   * Pack ids contain a dot ("dnd5e.monsters"), and any dotted input name gets
+   * treated as a path by expandObject — "packs.dnd5e.monsters" would nest three
+   * levels deep instead of keying one flat entry, so nothing would ever match a
+   * pack again. Data attributes carry the id verbatim.
+   */
+  static async #onSubmit(_event, form, _formData) {
+    const collect = (attribute) =>
+      Object.fromEntries(
+        [...form.querySelectorAll(`input[${attribute}]`)].map((input) => [
+          input.getAttribute(attribute),
+          input.checked,
+        ]),
+      );
+
+    await game.settings.set(MODULE_ID, SETTINGS.SOURCE_PACKS, collect("data-pack-id"));
+    await game.settings.set(MODULE_ID, SETTINGS.ALLOWED_TYPES, collect("data-type-id"));
     ui.notifications.info(game.i18n.localize("REGION_BESTIARY.Notifications.FiltersSaved"));
   }
 }

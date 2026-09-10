@@ -64,14 +64,27 @@ function toProfile(entry, pack) {
 }
 
 /**
+ * Which pack ids the GM explicitly enabled.
+ *
+ * Pack ids contain a dot ("dnd5e.monsters"), so they must never round-trip
+ * through anything with dot-path semantics. The `=== true` check is deliberate:
+ * a setting saved in a malformed nested shape by an older build yields no
+ * selection at all, which falls back to "use every pack" rather than silently
+ * matching nothing.
+ */
+export function selectedPackIds(enabled) {
+  return Object.entries(enabled ?? {})
+    .filter(([, on]) => on === true)
+    .map(([id]) => id);
+}
+
+/**
  * Build the candidate list from the packs the GM enabled. An empty or unset
  * selection means "every Actor pack".
  */
 export async function buildCandidates() {
   const enabled = game.settings.get(MODULE_ID, SETTINGS.SOURCE_PACKS) ?? {};
-  const selected = Object.entries(enabled)
-    .filter(([, on]) => on)
-    .map(([id]) => id);
+  const selected = selectedPackIds(enabled);
 
   const candidates = [];
   for (const pack of actorPacks()) {
