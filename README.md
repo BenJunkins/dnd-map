@@ -1,104 +1,147 @@
-# Faerun Monster Atlas
+# Region Bestiary
 
-![Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=flat-square)
-![Build](https://img.shields.io/badge/Build-Passing-success?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+**A Foundry VTT module that answers "what lives here?" using the compendiums your GM already has.**
 
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+A player picks a region. The GM's client scores every NPC in the GM's own compendiums
+against that region's terrain, danger level and known threats, applies the filters the GM
+configured, and whispers the result back.
 
-**A Serverless React Application mapping D&D 5e data onto the world of Faerun.**
-
-> **Status: Functional Prototype / Active Development**
->
-> This application is currently live and functional, but features are being actively refined.
-
-### [**Live Demo** (Click Here to View)](https://main.d66jhbb90risp.amplifyapp.com/)
+- Requires **Foundry VTT v13+** (verified on v14) and the **dnd5e** system.
+- Ships **no monster data**. Everything offered comes from your own compendiums, so
+  homebrew and non-SRD content work out of the box.
+- 51 Faerûn regions included.
 
 ---
 
-## Overview
+## How it works
 
-**Faerun Atlas** is an interactive data visualization tool that bridges the gap between raw D&D 5e API data and the geographical lore of the Forgotten Realms.
+```
+[Player] Region Bestiary picker
+    │  socket: { type: "query", regionId }
+    ▼
+[Active GM's client only]
+    ├─ read the enabled Actor compendiums (index only — no full document loads)
+    ├─ score each NPC against the region
+    ├─ apply the GM's filters
+    ▼
+whispered ChatMessage → the asking player and the GM
+```
 
-Users can explore a map of Faerun, hover over distinct regions (like the Sword Coast or Chult), and instantly see which monsters inhabit those areas based on their Challenge Rating (CR) and type.
+Scoring never runs on a player's machine, so a player can only ever learn what the GM's
+filters permit. Monsters are linked by UUID, so clicking one opens the GM's own stat block.
 
-### Key Features
+### What the score is made of
 
-- **Interactive Map:** Custom Leaflet.js implementation using a non-geographical (fantasy) coordinate system.
-- **Region Detection:** Ray-casting algorithms determine which fantasy nation the cursor is hovering over.
-- **Live Data:** Fetches monster statistics (HP, CR, Type) from a DynamoDB database.
-- **Smart Filtering:** Filter monsters globally by Challenge Rating (Low, Mid, High).
+| Signal | Weight | Source |
+| :--- | ---: | :--- |
+| Named among the region's known threats | 40 | region `dominant_monsters` |
+| Creature type suits the terrain | 25 | terrain × type affinity table |
+| CR fits the region's danger band | ±20 | region `danger` |
+| Movement / senses / size suit the terrain | ±10 | actor's own data |
 
----
-
-## Architecture & Tech Stack
-
-This project uses a fully **Serverless Architecture** on AWS to ensure scalability and zero idle costs.
-
-| Component         | Technology                 | Role                                 |
-| :---------------- | :------------------------- | :----------------------------------- |
-| **Frontend** | React (Vite)               | Interactive UI & State Management    |
-| **Mapping** | Leaflet.js + React-Leaflet | Image Overlay & Polygon Rendering    |
-| **Hosting** | AWS Amplify                | CI/CD & Static Site Hosting          |
-| **API** | AWS API Gateway            | RESTful Endpoint management          |
-| **Backend Logic** | AWS Lambda (Python)        | Data fetching & database interfacing |
-| **Database** | Amazon DynamoDB            | NoSQL storage for monster stats      |
-
-### Data Flow
-
-1.  **Ingestion:** A Python Lambda script queries the [DnD 5e GraphQL API](https://www.dnd5eapi.co/) and writes optimized records to **DynamoDB**.
-2.  **Request:** The React frontend requests data via **API Gateway**.
-3.  **Response:** A second Lambda function scans the database and returns JSON to the client.
-4.  **Visualization:** React maps the data points to custom polygons drawn over the Faerun image.
-
-![AWS Project (2)](https://github.com/user-attachments/assets/1c6ee848-22d7-4ab2-876a-de5e6acd2ba9)
+Every result carries the reasons it scored, which is what makes the output auditable
+rather than a black box.
 
 ---
 
-## How to Run Locally
+## Installation
 
-If you want to poke around the code, you can run it on your machine:
+Paste this manifest URL into Foundry's **Add-on Modules → Install Module**:
 
-1.  **Clone the repo**
+```
+https://github.com/BenJunkins/dnd-map/releases/latest/download/module.json
+```
 
-    ```bash
-    git clone [https://github.com/Ben_Junkins/dnd-map.git](https://github.com/Ben_Junkins/dnd-map.git)
-    cd dnd-map
-    ```
+Or clone into your Foundry `Data/modules/` directory as `region-bestiary`.
 
-2.  **Install dependencies**
+## GM configuration
 
-    ```bash
-    npm install
-    ```
+**Settings → Module Settings → Region Bestiary**
 
-3.  **Start the server**
-    ```bash
-    npm run dev
-    ```
+| Setting | Effect |
+| :--- | :--- |
+| Configure Filters | Which compendiums to draw from, and which creature types players may be told about |
+| Minimum / Maximum CR | Hard bounds on what is ever reported |
+| Maximum Results | How many monsters a single answer lists |
+| Minimum Match Score | Raise for strong regional matches only, lower for looser ones |
+| Reveal Type, CR and Reasoning | Off by default — players see only names |
 
----
+Players open the picker from the token-layer scene controls, or via a macro:
 
-## Roadmap (Upcoming Features)
-
-- [ ] **Accurate Spawning:** Move from random regional assignment to lore-accurate monster locations.
-- [ ] **Detail View:** Click a monster to view full stats (AC, Speed, Attacks) in a modal.
-- [ ] **Dungeon Master Mode:** Allow users to drag-and-drop monsters to build custom encounters.
+```js
+game.modules.get("region-bestiary").api.openQuery();
+```
 
 ---
 
-## Legal Disclaimer
+## Development
 
-**Faerun Monster Explorer** is unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.
+No build step — Foundry loads the ES modules directly.
 
-The monster data is provided via the [DnD 5e API](https://www.dnd5eapi.co/) under the Creative Commons (CC-BY-4.0) license.
+```bash
+npm install
+npm test                              # scorer unit tests
+npm run score -- sword_coast          # ranked list for a region, no Foundry needed
+npm run score                         # list every region id
+npm run normalize-regions             # regenerate data/regions.json from the archived source
+npm run lint
+```
+
+`npm run score` is the tuning loop. Adjust `WEIGHTS` or the affinity table in
+`scripts/vocabulary.js`, re-run it, and read the reasons — no Foundry restart required.
+
+### Layout
+
+```
+module.json                 manifest
+scripts/
+  main.js                   hook wiring (init / setup / ready)
+  scoring.js                pure scorer — no Foundry globals, unit-tested
+  vocabulary.js             terrain set, type affinity, CR bands
+  compendium.js             reads the GM's Actor packs via the compendium index
+  socket.js                 player request → active GM → whispered result
+  settings.js               GM filter settings
+  apps/                     ApplicationV2 windows
+data/regions.json           normalized region profiles (shipped)
+tools/                      offline data + tuning scripts (not shipped behaviour)
+test/                       node:test suites
+```
+
+### Adding a region
+
+Append to `tools/legacy-regions.json` and run `npm run normalize-regions`. Terrain strings
+must map to the controlled 5e set (`arctic, coastal, desert, forest, grassland, hill,
+mountain, swamp, underdark, underwater, urban`) — the normalizer fails loudly on anything
+it does not recognise, which is what keeps the vocabulary closed.
 
 ---
 
-## Contact
+## Roadmap
 
-Built by **Benjamin Junkins** as a Cloud & Frontend Portfolio Project.
+- [ ] Character-specific knowledge gating — filter by what a given PC would plausibly know
+      (Nature/Arcana proficiency, ranger favoured terrain, background, visited regions)
+- [ ] Output as a Foundry RollTable, so results plug into the existing encounter ecosystem
+- [ ] Curated region↔monster associations layered over the heuristic
+- [ ] Interactive map region selection
 
-- [LinkedIn](https://linkedin.com/in/benjamin-junkins/)
+---
+
+## Licence and attribution
+
+Module code is MIT licensed — see [LICENSE](LICENSE).
+
+Region data is original fan content. **No stat blocks, artwork, or published text are
+included or redistributed** — monsters are resolved by reference from compendiums the
+user already owns.
+
+This work includes material from the System Reference Document 5.1 ("SRD 5.1") by Wizards
+of the Coast LLC, available at
+<https://dnd.wizards.com/resources/systems-reference-document>. The SRD 5.1 is licensed
+under the Creative Commons Attribution 4.0 International License, available at
+<https://creativecommons.org/licenses/by/4.0/legalcode>.
+
+Region Bestiary is unofficial Fan Content permitted under the Fan Content Policy. Not
+approved/endorsed by Wizards. Portions of the materials used are property of Wizards of
+the Coast. ©Wizards of the Coast LLC.
+
+Built by **Benjamin Junkins** — [LinkedIn](https://linkedin.com/in/benjamin-junkins/)

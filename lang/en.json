@@ -1,0 +1,40 @@
+{
+  "REGION_BESTIARY.Save": "Save Filters",
+
+  "REGION_BESTIARY.Query.Title": "Region Bestiary",
+  "REGION_BESTIARY.Query.Hint": "Choose a region to ask what is known to live there. Your GM's filters decide what comes back.",
+  "REGION_BESTIARY.Query.Filter": "Narrow the list",
+  "REGION_BESTIARY.Query.FilterPlaceholder": "Type to filter regions…",
+  "REGION_BESTIARY.Query.Region": "Region",
+  "REGION_BESTIARY.Query.Submit": "Ask the GM",
+
+  "REGION_BESTIARY.Chat.Speaker": "Region Bestiary",
+  "REGION_BESTIARY.Chat.Flavor": "Likely inhabitants of {region}",
+  "REGION_BESTIARY.Chat.Empty": "Nothing in the available compendiums fits this region under the current filters.",
+
+  "REGION_BESTIARY.Notifications.Asked": "Your question has been sent to the GM.",
+  "REGION_BESTIARY.Notifications.NoGM": "No GM is connected, so there is nobody to answer.",
+  "REGION_BESTIARY.Notifications.NoCandidates": "Region Bestiary found no NPCs in the selected compendiums.",
+  "REGION_BESTIARY.Notifications.NoRegions": "Region Bestiary could not load its region data.",
+  "REGION_BESTIARY.Notifications.FiltersSaved": "Region Bestiary filters saved.",
+
+  "REGION_BESTIARY.Settings.FilterMenu.Name": "Source Compendiums & Creature Types",
+  "REGION_BESTIARY.Settings.FilterMenu.Label": "Configure Filters",
+  "REGION_BESTIARY.Settings.FilterMenu.Hint": "Choose which compendiums monsters are drawn from and which creature types players may be told about.",
+  "REGION_BESTIARY.Settings.SourcePacks": "Source Compendiums",
+  "REGION_BESTIARY.Settings.SourcePacksHint": "Only these packs are searched. With none ticked, every Actor compendium is used.",
+  "REGION_BESTIARY.Settings.NoPacks": "No Actor compendiums are available in this world.",
+  "REGION_BESTIARY.Settings.AllowedTypes": "Allowed Creature Types",
+  "REGION_BESTIARY.Settings.AllowedTypesHint": "Unticked types are never reported to players.",
+
+  "REGION_BESTIARY.Settings.CrMin.Name": "Minimum CR",
+  "REGION_BESTIARY.Settings.CrMin.Hint": "Monsters below this Challenge Rating are never reported.",
+  "REGION_BESTIARY.Settings.CrMax.Name": "Maximum CR",
+  "REGION_BESTIARY.Settings.CrMax.Hint": "Monsters above this Challenge Rating are never reported.",
+  "REGION_BESTIARY.Settings.MaxResults.Name": "Maximum Results",
+  "REGION_BESTIARY.Settings.MaxResults.Hint": "How many monsters to list in a single answer.",
+  "REGION_BESTIARY.Settings.MinScore.Name": "Minimum Match Score",
+  "REGION_BESTIARY.Settings.MinScore.Hint": "Raise this to report only strong regional matches; lower it to include loose ones.",
+  "REGION_BESTIARY.Settings.RevealDetails.Name": "Reveal Type, CR and Reasoning",
+  "REGION_BESTIARY.Settings.RevealDetails.Hint": "When off, players see only creature names."
+}

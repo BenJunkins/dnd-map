@@ -1,0 +1,43 @@
+{
+  "id": "region-bestiary",
+  "title": "Faerûn Monster Atlas",
+  "description": "Ask what lives in a region. The GM's client scores the monsters in the GM's own compendiums against that region's terrain, danger level and known threats, applies the GM's filters, and whispers the result back to the player.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Benjamin Junkins"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "14"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "dnd5e",
+        "type": "system",
+        "compatibility": {}
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/main.js"
+  ],
+  "styles": [
+    "styles/region-bestiary.css"
+  ],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": true,
+  "url": "https://github.com/BenJunkins/dnd-map",
+  "manifest": "https://github.com/BenJunkins/dnd-map/releases/latest/download/module.json",
+  "download": "https://github.com/BenJunkins/dnd-map/releases/latest/download/module.zip",
+  "license": "LICENSE",
+  "readme": "README.md"
+}

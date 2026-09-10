@@ -1,0 +1,1300 @@
+[
+  {
+    "region_id": "aglarond",
+    "name": "Aglarond",
+    "terrain": [
+      "coastal",
+      "forest",
+      "mountain"
+    ],
+    "climate": [
+      "temperate",
+      "coastal",
+      "forested"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Fey",
+      "Griffons",
+      "Thayan Undead"
+    ],
+    "major_factions": [
+      "Simbul (Historical)",
+      "Council",
+      "Half-Elves"
+    ]
+  },
+  {
+    "region_id": "altumbel",
+    "name": "Altumbel",
+    "terrain": [
+      "coastal",
+      "mountain"
+    ],
+    "climate": [
+      "temperate",
+      "windy",
+      "rainy"
+    ],
+    "danger": "low",
+    "features": [],
+    "dominant_monsters": [
+      "Pirates",
+      "Undead (Sea)",
+      "Sahuagin"
+    ],
+    "major_factions": [
+      "Merchants",
+      "Anti-Wizard Sentiment"
+    ]
+  },
+  {
+    "region_id": "amn",
+    "name": "Amn",
+    "terrain": [
+      "coastal",
+      "grassland",
+      "urban"
+    ],
+    "climate": [
+      "temperate",
+      "warm"
+    ],
+    "danger": "low",
+    "features": [],
+    "dominant_monsters": [
+      "Doppelgangers",
+      "Goblins (Sythillis)",
+      "Ogres"
+    ],
+    "major_factions": [
+      "Council of Six",
+      "Shadow Thieves",
+      "Cowled Wizards"
+    ]
+  },
+  {
+    "region_id": "anauroch",
+    "name": "Anauroch",
+    "terrain": [
+      "desert"
+    ],
+    "climate": [
+      "arid",
+      "scorching day",
+      "freezing night",
+      "magical storms"
+    ],
+    "danger": "high",
+    "features": [
+      "Ruins"
+    ],
+    "dominant_monsters": [
+      "Blue Dragons",
+      "Purple Worms",
+      "Mummies",
+      "Phaerimm",
+      "Lamias"
+    ],
+    "major_factions": [
+      "Bedine Nomads",
+      "Shade Enclave",
+      "Zhentarim"
+    ]
+  },
+  {
+    "region_id": "ashanath",
+    "name": "Ashanath",
+    "terrain": [
+      "grassland"
+    ],
+    "climate": [
+      "temperate",
+      "windy"
+    ],
+    "danger": "low",
+    "features": [],
+    "dominant_monsters": [
+      "Bulettes",
+      "Goblins",
+      "Ankhegs"
+    ],
+    "major_factions": [
+      "Independent Towns",
+      "Rashemen Influencers"
+    ]
+  },
+  {
+    "region_id": "border_kingdoms",
+    "name": "Border Kingdoms",
+    "terrain": [
+      "coastal",
+      "forest",
+      "hill"
+    ],
+    "climate": [
+      "varied",
+      "magical",
+      "chaotic"
+    ],
+    "danger": "high",
+    "features": [
+      "Weird"
+    ],
+    "dominant_monsters": [
+      "Beholders",
+      "Mimics",
+      "Adventurers",
+      "Demons"
+    ],
+    "major_factions": [
+      "Petty Tyrants",
+      "Adventurers",
+      "Zhentarim"
+    ]
+  },
+  {
+    "region_id": "calimshan",
+    "name": "Calimshan",
+    "terrain": [
+      "desert",
+      "urban"
+    ],
+    "climate": [
+      "hot",
+      "arid",
+      "desert"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Djinn",
+      "Efreet",
+      "Desert Creatures",
+      "Lamias"
+    ],
+    "major_factions": [
+      "Genie Lords",
+      "Pasha",
+      "Guilds"
+    ]
+  },
+  {
+    "region_id": "chessenta",
+    "name": "Chessenta",
+    "terrain": [
+      "grassland",
+      "hill",
+      "urban"
+    ],
+    "climate": [
+      "warm",
+      "temperate"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Hydras",
+      "Cyclopes",
+      "Manticores"
+    ],
+    "major_factions": [
+      "City Rulers",
+      "Tchazzar (Dragon)"
+    ]
+  },
+  {
+    "region_id": "chondath",
+    "name": "Chondath",
+    "terrain": [
+      "coastal",
+      "forest",
+      "grassland"
+    ],
+    "climate": [
+      "warm",
+      "humid"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Spies",
+      "Lycanthropes",
+      "Elves"
+    ],
+    "major_factions": [
+      "Merchant Houses",
+      "Emerald Enclave"
+    ]
+  },
+  {
+    "region_id": "chult",
+    "name": "Chult",
+    "terrain": [
+      "coastal",
+      "forest",
+      "mountain",
+      "swamp"
+    ],
+    "climate": [
+      "tropical",
+      "hot",
+      "humid",
+      "monsoon"
+    ],
+    "danger": "extreme",
+    "features": [],
+    "dominant_monsters": [
+      "Dinosaurs",
+      "Yuan-ti",
+      "Undead",
+      "Giant Apes",
+      "Zombies"
+    ],
+    "major_factions": [
+      "Flaming Fist",
+      "Order of the Gauntlet",
+      "Red Wizards"
+    ]
+  },
+  {
+    "region_id": "cormyr",
+    "name": "Cormyr",
+    "terrain": [
+      "forest",
+      "grassland",
+      "hill",
+      "mountain"
+    ],
+    "climate": [
+      "temperate",
+      "rainy"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Goblins",
+      "Dragons",
+      "Bandits",
+      "Orcs"
+    ],
+    "major_factions": [
+      "Purple Dragons",
+      "War Wizards",
+      "Crown"
+    ]
+  },
+  {
+    "region_id": "damara",
+    "name": "Damara",
+    "terrain": [
+      "hill",
+      "mountain",
+      "urban"
+    ],
+    "climate": [
+      "cold",
+      "temperate"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Goblins",
+      "Duergar",
+      "Dragons",
+      "Wolves"
+    ],
+    "major_factions": [
+      "King of Damara",
+      "Church of Ilmater",
+      "Order of the Golden Cup"
+    ]
+  },
+  {
+    "region_id": "dambrath",
+    "name": "Dambrath",
+    "terrain": [
+      "coastal",
+      "forest",
+      "grassland"
+    ],
+    "climate": [
+      "hot",
+      "humid"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Drow",
+      "Half-Drow",
+      "Spiders",
+      "Lizardfolk"
+    ],
+    "major_factions": [
+      "Crinti (Shadow Nobility)",
+      "Loviatar Worship"
+    ]
+  },
+  {
+    "region_id": "dragon_coast",
+    "name": "Dragon Coast",
+    "terrain": [
+      "coastal",
+      "forest",
+      "mountain"
+    ],
+    "climate": [
+      "temperate",
+      "humid"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Pirates",
+      "Dragon Turtles",
+      "Lizardfolk",
+      "Bandits"
+    ],
+    "major_factions": [
+      "Pirate Lords",
+      "Merchant Costers",
+      "Zhentarim"
+    ]
+  },
+  {
+    "region_id": "eastern_shaar",
+    "name": "Eastern Shaar",
+    "terrain": [
+      "grassland"
+    ],
+    "climate": [
+      "hot",
+      "arid"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Gnolls",
+      "Wemics",
+      "Loxodons",
+      "Bulettes"
+    ],
+    "major_factions": [
+      "Nomad Tribes",
+      "Gnoll Packs"
+    ]
+  },
+  {
+    "region_id": "free_unther",
+    "name": "Free Unther (North / Messemprar)",
+    "terrain": [
+      "coastal",
+      "grassland"
+    ],
+    "climate": [
+      "arid",
+      "warm"
+    ],
+    "danger": "high",
+    "features": [
+      "Ruins"
+    ],
+    "dominant_monsters": [
+      "Constructs",
+      "Mages",
+      "Undead"
+    ],
+    "major_factions": [
+      "Northern Wizards",
+      "Messemprar Rebels",
+      "Cults"
+    ]
+  },
+  {
+    "region_id": "halruaa",
+    "name": "Halruaa",
+    "terrain": [
+      "grassland",
+      "mountain"
+    ],
+    "climate": [
+      "warm",
+      "humid",
+      "sheltered"
+    ],
+    "danger": "medium",
+    "features": [
+      "Magical"
+    ],
+    "dominant_monsters": [
+      "Constructs",
+      "Elementals",
+      "Skyships"
+    ],
+    "major_factions": [
+      "Mages Council",
+      "Jordain"
+    ]
+  },
+  {
+    "region_id": "icewind_dale",
+    "name": "Icewind Dale",
+    "terrain": [
+      "arctic",
+      "mountain"
+    ],
+    "climate": [
+      "arctic",
+      "frigid",
+      "blizzards",
+      "eternal night"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Yetis",
+      "Remorhaz",
+      "Frost Giants",
+      "White Dragons",
+      "Coldlight Walkers"
+    ],
+    "major_factions": [
+      "Ten-Towns",
+      "Arcane Brotherhood",
+      "Reghed Barbarians"
+    ]
+  },
+  {
+    "region_id": "impiltur",
+    "name": "Impiltur",
+    "terrain": [
+      "coastal",
+      "hill",
+      "mountain"
+    ],
+    "climate": [
+      "cold",
+      "temperate",
+      "windy"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Demons",
+      "Undead",
+      "Cultists",
+      "Gargoyles"
+    ],
+    "major_factions": [
+      "Church of Ilmater",
+      "Demon Hunters"
+    ]
+  },
+  {
+    "region_id": "lantan",
+    "name": "Lantan",
+    "terrain": [
+      "coastal",
+      "mountain"
+    ],
+    "climate": [
+      "temperate",
+      "tropical",
+      "stormy"
+    ],
+    "danger": "low",
+    "features": [],
+    "dominant_monsters": [
+      "Constructs",
+      "Mechanical Beasts",
+      "Gnomes"
+    ],
+    "major_factions": [
+      "Techsmiths of Gond",
+      "Gnomish Inventors"
+    ]
+  },
+  {
+    "region_id": "lapaliiya",
+    "name": "Lapaliiya",
+    "terrain": [
+      "coastal",
+      "forest",
+      "urban"
+    ],
+    "climate": [
+      "tropical",
+      "hot"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Yuan-ti",
+      "Serpents",
+      "Naga"
+    ],
+    "major_factions": [
+      "City Leagues",
+      "Serpent Cults"
+    ]
+  },
+  {
+    "region_id": "luiren",
+    "name": "Luiren",
+    "terrain": [
+      "forest",
+      "grassland",
+      "hill"
+    ],
+    "climate": [
+      "warm",
+      "humid"
+    ],
+    "danger": "low",
+    "features": [],
+    "dominant_monsters": [
+      "Forest Creatures",
+      "Shapeshifters",
+      "Spiders"
+    ],
+    "major_factions": [
+      "Halfling Sheriffs",
+      "Temples of Yondalla"
+    ]
+  },
+  {
+    "region_id": "luruar",
+    "name": "Luruar (Silver Marches)",
+    "terrain": [
+      "forest",
+      "mountain",
+      "urban"
+    ],
+    "climate": [
+      "cold",
+      "temperate",
+      "snowy winters"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Drow",
+      "Dragons",
+      "Orcs",
+      "Duergar"
+    ],
+    "major_factions": [
+      "Knights in Silver",
+      "Dwarves of Citadel Adbar",
+      "Harpers"
+    ]
+  },
+  {
+    "region_id": "moonshae_isles",
+    "name": "Moonshae Isles",
+    "terrain": [
+      "coastal",
+      "forest",
+      "mountain",
+      "swamp"
+    ],
+    "climate": [
+      "rainy",
+      "misty",
+      "temperate"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Fey",
+      "Giants",
+      "Werewolves",
+      "Displacer Beasts"
+    ],
+    "major_factions": [
+      "High King",
+      "Ffolk",
+      "Northlanders",
+      "Druids"
+    ]
+  },
+  {
+    "region_id": "mulhorand",
+    "name": "Mulhorand",
+    "terrain": [
+      "desert",
+      "grassland"
+    ],
+    "climate": [
+      "hot",
+      "arid"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Mummies",
+      "Sphinxes",
+      "Jackalweres",
+      "Scorpions"
+    ],
+    "major_factions": [
+      "Pharaoh",
+      "Church of Anhur",
+      "Church of Horus-Re"
+    ]
+  },
+  {
+    "region_id": "murghom",
+    "name": "Murghôm",
+    "terrain": [
+      "grassland"
+    ],
+    "climate": [
+      "temperate",
+      "arid"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Dragons",
+      "Wyverns",
+      "Undead"
+    ],
+    "major_factions": [
+      "Dragon Princes",
+      "Ataman"
+    ]
+  },
+  {
+    "region_id": "narfell",
+    "name": "Narfell",
+    "terrain": [
+      "grassland"
+    ],
+    "climate": [
+      "cold",
+      "dry"
+    ],
+    "danger": "high",
+    "features": [
+      "Ancient Ruins"
+    ],
+    "dominant_monsters": [
+      "Demons",
+      "Fiends",
+      "Winter Wolves",
+      "Remorhaz"
+    ],
+    "major_factions": [
+      "Narf Horsemen",
+      "Demonbinders"
+    ]
+  },
+  {
+    "region_id": "nelanther_isles",
+    "name": "Nelanther Isles",
+    "terrain": [
+      "coastal",
+      "mountain"
+    ],
+    "climate": [
+      "windy",
+      "temperate",
+      "stormy"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Pirates",
+      "Ogres",
+      "Harpies",
+      "Sea Monsters"
+    ],
+    "major_factions": [
+      "Pirate Captains",
+      "Sea Towers"
+    ]
+  },
+  {
+    "region_id": "occupied_unther",
+    "name": "Occupied Unther (South / Tymanther)",
+    "terrain": [
+      "desert",
+      "grassland"
+    ],
+    "climate": [
+      "arid",
+      "hot"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Dragonborn",
+      "Dragons",
+      "Hydras",
+      "Sphinxes"
+    ],
+    "major_factions": [
+      "Gilgeam's Legion",
+      "Tymanther Dragonborn",
+      "Mulhorand"
+    ]
+  },
+  {
+    "region_id": "pirate_isles",
+    "name": "Pirate Isles",
+    "terrain": [
+      "coastal",
+      "mountain"
+    ],
+    "climate": [
+      "temperate",
+      "windy"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Pirates",
+      "Sahuagin",
+      "Sea Serpents",
+      "Ghosts"
+    ],
+    "major_factions": [
+      "Pirate Lords",
+      "Immigrants"
+    ]
+  },
+  {
+    "region_id": "rashemen",
+    "name": "Rashemen",
+    "terrain": [
+      "coastal",
+      "forest",
+      "hill"
+    ],
+    "climate": [
+      "cold",
+      "snowy winters",
+      "short summers"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Hags",
+      "Spirits",
+      "Elementals",
+      "Werebears"
+    ],
+    "major_factions": [
+      "Wychlaran (Witches)",
+      "Berserkers"
+    ]
+  },
+  {
+    "region_id": "sembia",
+    "name": "Sembia",
+    "terrain": [
+      "coastal",
+      "grassland",
+      "urban"
+    ],
+    "climate": [
+      "temperate",
+      "mild"
+    ],
+    "danger": "low",
+    "features": [],
+    "dominant_monsters": [
+      "Doppelgangers",
+      "Assassins",
+      "Shadows"
+    ],
+    "major_factions": [
+      "Merchant Guilds",
+      "Netheril (Historical)",
+      "Shadovar"
+    ]
+  },
+  {
+    "region_id": "sespech",
+    "name": "Sespech",
+    "terrain": [
+      "coastal",
+      "grassland"
+    ],
+    "climate": [
+      "temperate",
+      "warm"
+    ],
+    "danger": "low",
+    "features": [],
+    "dominant_monsters": [
+      "Goblins",
+      "Undead",
+      "Naga"
+    ],
+    "major_factions": [
+      "Baron of Sespech",
+      "Chondath Rivals"
+    ]
+  },
+  {
+    "region_id": "tashalar",
+    "name": "Tashalar",
+    "terrain": [
+      "coastal",
+      "forest",
+      "mountain"
+    ],
+    "climate": [
+      "tropical",
+      "hot",
+      "humid"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Yuan-ti",
+      "Snakes",
+      "Jungle Cats"
+    ],
+    "major_factions": [
+      "Merchant Princes",
+      "Yuan-ti Purebloods"
+    ]
+  },
+  {
+    "region_id": "tethyr",
+    "name": "Tethyr",
+    "terrain": [
+      "forest",
+      "grassland",
+      "hill"
+    ],
+    "climate": [
+      "temperate",
+      "warm",
+      "forest"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Elves (Wild)",
+      "Spiders",
+      "Dragons",
+      "Giants"
+    ],
+    "major_factions": [
+      "Crown of Tethyr",
+      "Elves of Wealdath"
+    ]
+  },
+  {
+    "region_id": "thar",
+    "name": "Thar",
+    "terrain": [
+      "desert",
+      "hill",
+      "mountain"
+    ],
+    "climate": [
+      "cold",
+      "arid",
+      "harsh"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Ogres",
+      "Orcs",
+      "Leucrottas",
+      "Manticores"
+    ],
+    "major_factions": [
+      "Ogre Kingdoms",
+      "Orc Tribes"
+    ]
+  },
+  {
+    "region_id": "tharsult",
+    "name": "Tharsult",
+    "terrain": [
+      "coastal",
+      "underdark"
+    ],
+    "climate": [
+      "tropical",
+      "wet"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Lizardfolk (Underground)",
+      "Spiders",
+      "Smugglers"
+    ],
+    "major_factions": [
+      "Merchant Families",
+      "Slave Traders"
+    ]
+  },
+  {
+    "region_id": "dalelands",
+    "name": "The Dalelands",
+    "terrain": [
+      "forest",
+      "grassland",
+      "hill"
+    ],
+    "climate": [
+      "temperate",
+      "forested"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Drow",
+      "Spiders",
+      "Owlbears",
+      "Zhentarim"
+    ],
+    "major_factions": [
+      "Dales Council",
+      "Elves of Cormanthor",
+      "Harpers",
+      "Zhentarim"
+    ]
+  },
+  {
+    "region_id": "great_dale",
+    "name": "The Great Dale",
+    "terrain": [
+      "forest",
+      "hill"
+    ],
+    "climate": [
+      "temperate",
+      "forest"
+    ],
+    "danger": "high",
+    "features": [
+      "Ruins"
+    ],
+    "dominant_monsters": [
+      "Treants",
+      "Blights",
+      "Fey",
+      "Demons"
+    ],
+    "major_factions": [
+      "Circle of Leth",
+      "Nentyarch",
+      "Demonfey"
+    ]
+  },
+  {
+    "region_id": "great_rift",
+    "name": "The Great Rift",
+    "terrain": [
+      "mountain",
+      "underdark"
+    ],
+    "climate": [
+      "temperate",
+      "mountainous"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Drow",
+      "Underdark Creatures",
+      "Dragons"
+    ],
+    "major_factions": [
+      "Gold Dwarves",
+      "Deep Kingdom"
+    ]
+  },
+  {
+    "region_id": "hordelands",
+    "name": "The Hordelands (Endless Waste)",
+    "terrain": [
+      "grassland"
+    ],
+    "climate": [
+      "arid",
+      "windy",
+      "cold winters"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Griffons",
+      "Wyverns",
+      "Ankhegs",
+      "Gnolls"
+    ],
+    "major_factions": [
+      "Tuigan Horde",
+      "Yamun Khahan"
+    ]
+  },
+  {
+    "region_id": "the_ride",
+    "name": "The Ride",
+    "terrain": [
+      "grassland"
+    ],
+    "climate": [
+      "temperate",
+      "windy",
+      "steppe"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Bulettes",
+      "Ankhegs",
+      "Gnolls",
+      "Orcs"
+    ],
+    "major_factions": [
+      "Barbarian Tribes",
+      "Zhentarim"
+    ]
+  },
+  {
+    "region_id": "northwest_faerun",
+    "name": "The Savage North",
+    "terrain": [
+      "forest",
+      "grassland",
+      "hill",
+      "mountain"
+    ],
+    "climate": [
+      "temperate",
+      "cold",
+      "misty"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Orcs",
+      "Trolls",
+      "Blue Dragons",
+      "Hill Giants",
+      "Treants"
+    ],
+    "major_factions": [
+      "Uthgardt Barbarians",
+      "Emerald Enclave",
+      "Lords' Alliance"
+    ]
+  },
+  {
+    "region_id": "shaar",
+    "name": "The Shaar",
+    "terrain": [
+      "grassland",
+      "mountain"
+    ],
+    "climate": [
+      "hot",
+      "arid"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Wemics",
+      "Gnolls",
+      "Lions",
+      "Elephants"
+    ],
+    "major_factions": [
+      "Nomadic Tribes",
+      "Slavers"
+    ]
+  },
+  {
+    "region_id": "sword_coast",
+    "name": "The Sword Coast",
+    "terrain": [
+      "coastal",
+      "forest",
+      "hill",
+      "urban"
+    ],
+    "climate": [
+      "temperate",
+      "rainy",
+      "misty",
+      "subarctic (north)"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Bandits",
+      "Goblins",
+      "Orcs",
+      "Trolls",
+      "Green Dragons"
+    ],
+    "major_factions": [
+      "Lords' Alliance",
+      "Zhentarim",
+      "Harpers"
+    ]
+  },
+  {
+    "region_id": "the_vast",
+    "name": "The Vast",
+    "terrain": [
+      "grassland",
+      "hill",
+      "mountain"
+    ],
+    "climate": [
+      "temperate",
+      "coastal"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Orcs",
+      "Goblins",
+      "Wyverns",
+      "Trolls"
+    ],
+    "major_factions": [
+      "Calaunt",
+      "Tantras",
+      "Ravens Bluff"
+    ]
+  },
+  {
+    "region_id": "thesk",
+    "name": "Thesk",
+    "terrain": [
+      "coastal",
+      "grassland"
+    ],
+    "climate": [
+      "temperate",
+      "mild"
+    ],
+    "danger": "medium",
+    "features": [
+      "Trade Roads"
+    ],
+    "dominant_monsters": [
+      "Bandits",
+      "Shadow Creatures",
+      "Orcs (Citizens)"
+    ],
+    "major_factions": [
+      "Shadowmasters",
+      "Merchant Council",
+      "Iron Orcs"
+    ]
+  },
+  {
+    "region_id": "thindol",
+    "name": "Thindol",
+    "terrain": [
+      "grassland",
+      "hill"
+    ],
+    "climate": [
+      "tropical",
+      "hot"
+    ],
+    "danger": "high",
+    "features": [],
+    "dominant_monsters": [
+      "Yuan-ti",
+      "Kuo-toa",
+      "Giant Insects"
+    ],
+    "major_factions": [
+      "Human Tribes",
+      "Kuo-toa (Underground)"
+    ]
+  },
+  {
+    "region_id": "threskel",
+    "name": "Threskel",
+    "terrain": [
+      "coastal",
+      "desert",
+      "grassland"
+    ],
+    "climate": [
+      "dry",
+      "temperate"
+    ],
+    "danger": "medium",
+    "features": [],
+    "dominant_monsters": [
+      "Dragons",
+      "Bandits",
+      "Undead"
+    ],
+    "major_factions": [
+      "Dragon Lords",
+      "Chessenta Rivals"
+    ]
+  },
+  {
+    "region_id": "turmish",
+    "name": "Turmish",
+    "terrain": [
+      "coastal",
+      "grassland",
+      "mountain"
+    ],
+    "climate": [
+      "temperate",
+      "mild"
+    ],
+    "danger": "low",
+    "features": [],
+    "dominant_monsters": [
+      "Sea Monsters",
+      "Goblins",
+      "Kobolds"
+    ],
+    "major_factions": [
+      "Assembly of Stars",
+      "Emerald Enclave"
+    ]
+  },
+  {
+    "region_id": "vaasa",
+    "name": "Vaasa",
+    "terrain": [
+      "arctic",
+      "desert",
+      "mountain",
+      "swamp"
+    ],
+    "climate": [
+      "cold",
+      "frozen",
+      "tundra"
+    ],
+    "danger": "deadly",
+    "features": [],
+    "dominant_monsters": [
+      "Undead",
+      "Liches",
+      "Constructs",
+      "Ice Giants"
+    ],
+    "major_factions": [
+      "Warlock Knights",
+      "Cult of Orcus"
+    ]
+  }
+]
