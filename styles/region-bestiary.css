@@ -87,7 +87,7 @@
   gap: 0.5rem;
 }
 
-.region-bestiary .rb-entry-head img {
+.region-bestiary .rb-name img {
   border: none;
   border-radius: 3px;
   vertical-align: middle;
@@ -95,7 +95,24 @@
   object-fit: cover;
 }
 
-.region-bestiary .rb-signature .content-link {
+.region-bestiary .rb-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* Only added once scripts/chat.js decides this viewer may open the sheet. */
+.region-bestiary .rb-name.rb-link {
+  cursor: pointer;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
+
+.region-bestiary .rb-name.rb-link:hover {
+  color: var(--color-text-hyperlink, #ff6400);
+}
+
+.region-bestiary .rb-signature .rb-name {
   font-weight: 700;
 }
 

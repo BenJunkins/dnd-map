@@ -65,6 +65,7 @@ export async function handleQuery({ regionId, userId }) {
       img: monster.img,
       type: monster.type,
       cr: monster.cr,
+      pack: monster.packLabel,
       score,
       signature,
       reason: reasons[0] ?? "",
@@ -79,6 +80,6 @@ export async function handleQuery({ regionId, userId }) {
     whisper,
     flavor: game.i18n.format("REGION_BESTIARY.Chat.Flavor", { region: region.name }),
     speaker: { alias: game.i18n.localize("REGION_BESTIARY.Chat.Speaker") },
-    flags: { [MODULE_ID]: { regionId, askedBy: userId } },
+    flags: { [MODULE_ID]: { regionId, askedBy: userId, reveal } },
   });
 }

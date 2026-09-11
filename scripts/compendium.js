@@ -78,6 +78,37 @@ export function selectedPackIds(enabled) {
     .map(([id]) => id);
 }
 
+/** Normalized key for duplicate detection: case- and whitespace-insensitive. */
+function nameKey(name) {
+  return String(name ?? "").trim().toLowerCase().replace(/\s+/g, " ");
+}
+
+/** How much usable index data an entry carries, for picking between copies. */
+function completeness(monster) {
+  return (monster.type ? 1 : 0) + (monster.cr !== null && monster.cr !== undefined ? 1 : 0);
+}
+
+/**
+ * Collapse the same creature appearing in several compendiums down to one entry.
+ *
+ * A GM with both the 2014 and 2024 SRD packs enabled has two "Goblin" entries;
+ * without this the card lists each of them. Ties are broken toward the entry
+ * with the most complete index data, then toward the pack encountered first, so
+ * the result is stable across runs.
+ */
+export function dedupeCandidates(candidates) {
+  const best = new Map();
+  for (const monster of candidates) {
+    const key = nameKey(monster.name);
+    if (!key) continue;
+    const existing = best.get(key);
+    if (!existing || completeness(monster) > completeness(existing)) {
+      best.set(key, monster);
+    }
+  }
+  return [...best.values()];
+}
+
 /**
  * Build the candidate list from the packs the GM enabled. An empty or unset
  * selection means "every Actor pack".
@@ -101,7 +132,7 @@ export async function buildCandidates() {
       candidates.push(toProfile(entry, pack));
     }
   }
-  return candidates;
+  return dedupeCandidates(candidates);
 }
 
 /** Apply the GM's configured filters to an already-ranked list. */
