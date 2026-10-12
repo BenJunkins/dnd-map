@@ -6,6 +6,8 @@ updates:
     directory: /
     schedule:
       interval: monthly
+    assignees:
+      - BenJunkins
     groups:
       # ESLint and @eslint/js need the same major version, so they always arrive in one pull request
       eslint:
