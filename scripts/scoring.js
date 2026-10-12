@@ -140,7 +140,10 @@ export function traitFit(monster, terrains = []) {
 
   let fraction = Math.min(hits / 2, 1);
 
-  if (BULKY_SIZES.has(monster.size) && [...terrainSet].some((t) => CRAMPED_TERRAINS.has(t))) {
+  if (
+    BULKY_SIZES.has(monster.size) &&
+    [...terrainSet].some((t) => CRAMPED_TERRAINS.has(t))
+  ) {
     fraction -= 0.5;
     reasons.push("very large for this terrain");
   }
@@ -174,8 +177,12 @@ export function scoreMonster(monster, region) {
   const cr = crFit(monster.cr, region.danger);
   if (cr !== 0) {
     score += WEIGHTS.cr * cr;
-    if (cr > 0.5) reasons.push(`CR ${monster.cr} fits a ${region.danger}-danger region`);
-    else if (cr < 0) reasons.push(`CR ${monster.cr} is out of band for a ${region.danger}-danger region`);
+    if (cr > 0.5)
+      reasons.push(`CR ${monster.cr} fits a ${region.danger}-danger region`);
+    else if (cr < 0)
+      reasons.push(
+        `CR ${monster.cr} is out of band for a ${region.danger}-danger region`,
+      );
   }
 
   const traits = traitFit(monster, region.terrain);
@@ -195,7 +202,11 @@ export function scoreMonster(monster, region) {
  * Score every candidate and return them ranked, highest first.
  * Ties break toward signature matches, then alphabetically, so output is stable.
  */
-export function rankMonsters(monsters, region, { limit = null, minScore = 0 } = {}) {
+export function rankMonsters(
+  monsters,
+  region,
+  { limit = null, minScore = 0 } = {},
+) {
   const scored = monsters
     .map((monster) => ({ monster, ...scoreMonster(monster, region) }))
     .filter((entry) => entry.score >= minScore)
