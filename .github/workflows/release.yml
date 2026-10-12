@@ -1,0 +1,46 @@
+name: Release
+
+# Run when a version tag such as v0.1.0 is pushed
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    name: Publish the release
+    runs-on: ubuntu-latest
+    # This job alone may create a release
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Check the tag matches the manifest
+        run: |
+          version="$(node -p "require('./module.json').version")"
+          if [ "$GITHUB_REF_NAME" != "v$version" ]; then
+            echo "::error::Tag $GITHUB_REF_NAME does not match module.json, which says $version"
+            exit 1
+          fi
+
+      - name: Install the dev tools
+        run: npm ci
+
+      - name: Lint and test
+        run: npm run check
+
+      - name: Zip the module
+        run: npm run package
+
+      - name: Create the release
+        run: gh release create "$GITHUB_REF_NAME" module.json module.zip --title "$GITHUB_REF_NAME" --generate-notes --verify-tag
+        env:
+          GH_TOKEN: ${{ github.token }}

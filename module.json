@@ -21,12 +21,8 @@
       }
     ]
   },
-  "esmodules": [
-    "scripts/main.js"
-  ],
-  "styles": [
-    "styles/region-bestiary.css"
-  ],
+  "esmodules": ["scripts/main.js"],
+  "styles": ["styles/region-bestiary.css"],
   "languages": [
     {
       "lang": "en",
@@ -37,7 +33,7 @@
   "socket": true,
   "url": "https://github.com/BenJunkins/dnd-map",
   "manifest": "https://github.com/BenJunkins/dnd-map/releases/latest/download/module.json",
-  "download": "https://github.com/BenJunkins/dnd-map/releases/latest/download/module.zip",
+  "download": "https://github.com/BenJunkins/dnd-map/releases/download/v0.1.0/module.zip",
   "license": "LICENSE",
   "readme": "README.md"
 }
