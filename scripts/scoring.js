@@ -28,14 +28,32 @@ const TRAIT_TERRAIN_HINTS = [
 const CRAMPED_TERRAINS = new Set(["urban", "forest", "underdark"]);
 const BULKY_SIZES = new Set(["huge", "grg"]);
 
+/** Plurals the suffix rules below get wrong. Add to this before making the rules cleverer. */
+const IRREGULAR_PLURALS = {
+  cyclopes: "cyclops",
+  zombies: "zombie",
+};
+
 /**
  * Reduce a plural noun to something that will match a singular monster name.
  * Intentionally crude — it only has to handle the vocabulary in
- * `dominant_monsters` ("Goblins", "Bandits", "Harpies", "Green Dragons").
+ * `dominant_monsters` ("Goblins", "Harpies", "Winter Wolves", "Liches").
+ *
+ * A bracketed note is dropped first: "Goblins (Sythillis)" still names goblins.
  */
 export function singularize(term) {
-  const word = term.trim().toLowerCase();
+  const word = term
+    .replace(/\([^)]*\)/g, "")
+    .trim()
+    .toLowerCase();
+
+  const lastWordStart = word.lastIndexOf(" ") + 1;
+  const irregular = IRREGULAR_PLURALS[word.slice(lastWordStart)];
+  if (irregular) return word.slice(0, lastWordStart) + irregular;
+
   if (word.endsWith("ies") && word.length > 4) return `${word.slice(0, -3)}y`;
+  if (word.endsWith("ves")) return `${word.slice(0, -3)}f`;
+  if (/(ch|sh|x)es$/.test(word)) return word.slice(0, -2);
   if (word.endsWith("ss")) return word;
   if (word.endsWith("s") && word.length > 3) return word.slice(0, -1);
   return word;
