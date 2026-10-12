@@ -36,3 +36,25 @@ jobs:
 
       - name: Test, with coverage
         run: npm run coverage
+  package:
+    name: Build the module zip
+    runs-on: ubuntu-latest
+    needs: check
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Zip the module
+        run: npm run package
+
+      - name: List what is inside
+        run: unzip -l module.zip
+
+      # Keeps the zip with the run for a week, so a pull request can be tried in Foundry before it merges
+      - uses: actions/upload-artifact@v7
+        with:
+          name: module
+          path: |
+            module.json
+            module.zip
+          if-no-files-found: error
+          retention-days: 7

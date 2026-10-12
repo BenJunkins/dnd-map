@@ -108,3 +108,36 @@ test("data/regions.json is what the normalizer makes from the archived source", 
     "data/regions.json is out of date. Run: npm run normalize-regions",
   );
 });
+
+test("the install links point at this repo, and the download at this version", () => {
+  assert.equal(
+    manifest.manifest,
+    `${manifest.url}/releases/latest/download/module.json`,
+  );
+  assert.equal(
+    manifest.download,
+    `${manifest.url}/releases/download/v${manifest.version}/module.zip`,
+  );
+});
+
+test("npm run package zips everything Foundry loads", () => {
+  const zipped = pkg.scripts.package.split(" ");
+  const topLevel = (relative) => relative.split("/")[0];
+  const needed = new Set([
+    "module.json",
+    "data",
+    "templates",
+    manifest.license,
+    manifest.readme,
+    ...manifest.esmodules.map(topLevel),
+    ...manifest.styles.map(topLevel),
+    ...manifest.languages.map((language) => topLevel(language.path)),
+  ]);
+
+  for (const entry of needed) {
+    assert.ok(
+      zipped.includes(entry),
+      `${entry} is missing from the package script`,
+    );
+  }
+});
