@@ -1,0 +1,21 @@
+# Once a month, open one pull request per group with whatever has a newer version.
+# CI runs on those pull requests like on any other, so a green one is safe to merge.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      # Small updates arrive together. A new major version gets a pull request of its own
+      dev-tools:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ["*"]

@@ -1,0 +1,38 @@
+name: CI
+
+# Run on every pull request, on every change that lands on main, and on demand from the Actions tab
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A newer push to the same branch cancels the run still going for the older one
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Lint and test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # Installs the Node version named in .nvmrc and reuses downloaded packages between runs
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install the dev tools
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Test, with coverage
+        run: npm run coverage
