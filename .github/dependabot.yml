@@ -7,7 +7,10 @@ updates:
     schedule:
       interval: monthly
     groups:
-      # Small updates arrive together. A new major version gets a pull request of its own
+      # ESLint and @eslint/js need the same major version, so they always arrive in one pull request
+      eslint:
+        patterns: ["eslint", "@eslint/js"]
+      # Other small updates arrive together. A new major version gets a pull request of its own
       dev-tools:
         patterns: ["*"]
         update-types: ["minor", "patch"]
