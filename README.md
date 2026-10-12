@@ -1,5 +1,8 @@
 # Region Bestiary
 
+[![CI](https://github.com/BenJunkins/dnd-map/actions/workflows/ci.yml/badge.svg)](https://github.com/BenJunkins/dnd-map/actions/workflows/ci.yml)
+[![Latest release](https://img.shields.io/github/v/release/BenJunkins/dnd-map)](https://github.com/BenJunkins/dnd-map/releases/latest)
+
 **A Foundry VTT module that answers "what lives here?" using the compendiums your GM already has.**
 
 A player picks a region. The GM's client scores every NPC in the GM's own compendiums
@@ -32,12 +35,12 @@ filters permit. Monsters are linked by UUID, so clicking one opens the GM's own 
 
 ### What the score is made of
 
-| Signal | Weight | Source |
-| :--- | ---: | :--- |
-| Named among the region's known threats | 40 | region `dominant_monsters` |
-| Creature type suits the terrain | 25 | terrain × type affinity table |
-| CR fits the region's danger band | ±20 | region `danger` |
-| Movement / senses / size suit the terrain | ±10 | actor's own data |
+| Signal                                    | Weight | Source                        |
+| :---------------------------------------- | -----: | :---------------------------- |
+| Named among the region's known threats    |     40 | region `dominant_monsters`    |
+| Creature type suits the terrain           |     25 | terrain × type affinity table |
+| CR fits the region's danger band          |    ±20 | region `danger`               |
+| Movement / senses / size suit the terrain |    ±10 | actor's own data              |
 
 Every result carries the reasons it scored, which is what makes the output auditable
 rather than a black box.
@@ -58,13 +61,13 @@ Or clone into your Foundry `Data/modules/` directory as `region-bestiary`.
 
 **Settings → Module Settings → Region Bestiary**
 
-| Setting | Effect |
-| :--- | :--- |
-| Configure Filters | Which compendiums to draw from, and which creature types players may be told about |
-| Minimum / Maximum CR | Hard bounds on what is ever reported |
-| Maximum Results | How many monsters a single answer lists |
-| Minimum Match Score | Raise for strong regional matches only, lower for looser ones |
-| Reveal Type, CR and Reasoning | Off by default — players see only names |
+| Setting                       | Effect                                                                             |
+| :---------------------------- | :--------------------------------------------------------------------------------- |
+| Configure Filters             | Which compendiums to draw from, and which creature types players may be told about |
+| Minimum / Maximum CR          | Hard bounds on what is ever reported                                               |
+| Maximum Results               | How many monsters a single answer lists                                            |
+| Minimum Match Score           | Raise for strong regional matches only, lower for looser ones                      |
+| Reveal Type, CR and Reasoning | Off by default — players see only names                                            |
 
 Players open the picker from the token-layer scene controls, or via a macro:
 
@@ -76,19 +79,26 @@ game.modules.get("region-bestiary").api.openQuery();
 
 ## Development
 
-No build step — Foundry loads the ES modules directly.
+No build step — Foundry loads the ES modules directly. The dev tools need Node 24, which
+`.nvmrc` pins.
 
 ```bash
-npm install
-npm test                              # scorer unit tests
+nvm use
+npm ci
+npm run check                         # lint, then every test with a coverage floor (what CI runs)
+npm test                              # tests only
 npm run score -- sword_coast          # ranked list for a region, no Foundry needed
 npm run score                         # list every region id
 npm run normalize-regions             # regenerate data/regions.json from the archived source
-npm run lint
+npm run package                       # build module.zip exactly as a release does
 ```
 
 `npm run score` is the tuning loop. Adjust `WEIGHTS` or the affinity table in
 `scripts/vocabulary.js`, re-run it, and read the reasons — no Foundry restart required.
+
+GitHub Actions runs `npm run check` and builds the zip on every pull request, and publishes
+a release when a version tag is pushed. [CONTRIBUTING.md](CONTRIBUTING.md) covers the
+workflow, the Foundry smoke test and the release steps.
 
 ### Layout
 
@@ -104,7 +114,8 @@ scripts/
   apps/                     ApplicationV2 windows
 data/regions.json           normalized region profiles (shipped)
 tools/                      offline data + tuning scripts (not shipped behaviour)
-test/                       node:test suites
+test/                       node:test suites, with a fake Foundry for the GM-side code
+.github/                    CI and release workflows, Dependabot settings
 ```
 
 ### Adding a region
@@ -118,11 +129,9 @@ it does not recognise, which is what keeps the vocabulary closed.
 
 ## Roadmap
 
-- [ ] Character-specific knowledge gating — filter by what a given PC would plausibly know
-      (Nature/Arcana proficiency, ranger favoured terrain, background, visited regions)
-- [ ] Output as a Foundry RollTable, so results plug into the existing encounter ecosystem
-- [ ] Curated region↔monster associations layered over the heuristic
-- [ ] Interactive map region selection
+[ROADMAP.md](ROADMAP.md) has the plan in order, with the reason for the order. In short:
+make it installable, verify it in a live world, make the known-threat data mean what it
+says, then RollTable output, map selection and per-character knowledge.
 
 ---
 
