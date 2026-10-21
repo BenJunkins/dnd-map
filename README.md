@@ -9,7 +9,7 @@ A player picks a region. The GM's client scores every NPC in the GM's own compen
 against that region's terrain, danger level and known threats, applies the filters the GM
 configured, and whispers the result back.
 
-- Requires **Foundry VTT v13+** (verified on v14) and the **dnd5e** system.
+- Requires **Foundry VTT v13+** (verified on v13) and the **dnd5e** system.
 - Ships **no monster data**. Everything offered comes from your own compendiums, so
   homebrew and non-SRD content work out of the box.
 - 51 Faerûn regions included.
